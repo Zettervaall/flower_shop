@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const database = new sqlite3.Database('./backend/flowers.sqlite');
+const database = new sqlite3.Database('./flowers.sqlite');
 
 database.serialize(() => {
     database.run(`
