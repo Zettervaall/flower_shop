@@ -1,9 +1,9 @@
-const db = require('./database.js');
+const db = require('./db');
 
 // Categories
-const categories = ['Roses', 'Succulent', 'Gift', 'Plants', 'Orchids'];
+const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
 
-// Insert categories
+// Inserting categories
 const categoryStmt = db.prepare(
     `INSERT INTO categories (category_name) VALUES (?)`
 );
@@ -18,163 +18,49 @@ categoryStmt.finalize(() => {
     console.log('All categories inserted!');
 });
 
-// Products
+// Products data
 const products = [
-    // Roses (category 1)
     [
-        'Classic Red Roses',
-        'https://example.com/redroses.jpg',
-        199,
+        'Rose Bouquet',
+        'https://example.com/rose.jpg',
+        249.99,
         'red',
         'medium',
         1
     ],
+    ['Cactus', 'https://example.com/cactus.jpg', 99.5, 'green', 'low', 4],
     [
-        'White Rose Arrangement',
-        'https://example.com/whiteroses.jpg',
-        209,
-        'white',
-        'medium',
-        1
-    ],
-    [
-        'Pink Rose Bouquet',
-        'https://example.com/pinkroses.jpg',
-        189,
-        'pink',
-        'medium',
-        1
-    ],
-    [
-        'Yellow Roses',
-        'https://example.com/yellowroses.jpg',
-        179,
+        'Sunflower Pot',
+        'https://example.com/sunflower.jpg',
+        179.0,
         'yellow',
-        'medium',
-        1
+        'high',
+        3
     ],
     [
-        'Mini Rose Pot',
-        'https://example.com/minirose.jpg',
-        99,
-        'red',
-        'medium',
-        1
-    ],
-
-    // Succulent (category  2)
-    ['Red Tulips', 'https://example.com/redtulips.jpg', 129, 'red', 'low', 2],
-    [
-        'Yellow Tulips',
-        'https://example.com/yellowtulips.jpg',
-        139,
-        'yellow',
-        'low',
-        2
-    ],
-    [
-        'Mixed Tulips',
-        'https://example.com/mixedtulips.jpg',
-        149,
-        'mixed',
-        'low',
-        2
-    ],
-    [
-        'White Tulip Arrangement',
-        'https://example.com/whitetulips.jpg',
-        159,
-        'white',
-        'low',
-        2
-    ],
-    [
-        'Purple Tulips',
-        'https://example.com/purpletulips.jpg',
-        139,
+        'Orchid Gift Box',
+        'https://example.com/orchid.jpg',
+        329.0,
         'purple',
-        'low',
-        2
-    ],
-    ['Aloe Vera', 'https://example.com/aloe.jpg', 89, 'green', 'low', 2],
-    [
-        'Echeveria',
-        'https://example.com/echeveria.jpg',
-        79,
-        'blue-green',
-        'low',
-        2
-    ],
-    [
-        'Hens and Chicks',
-        'https://example.com/hensandchicks.jpg',
-        69,
-        'green',
-        'low',
-        2
-    ],
-    ['Zebra Plant', 'https://example.com/zebra.jpg', 99, 'green', 'low', 2],
-    ['Jade Plant', 'https://example.com/jade.jpg', 109, 'green', 'low', 2],
-
-    // Gift (category 3)
-    [
-        'Rose Gift Box',
-        'https://example.com/rosegift.jpg',
-        329,
-        'red',
         'medium',
-        3
+        5
     ],
-    [
-        'Succulent Gift Set',
-        'https://example.com/succgift.jpg',
-        199,
-        'mixed',
-        'low',
-        3
-    ],
-    [
-        'Orchid in Glass Dome',
-        'https://example.com/orchidgift.jpg',
-        359,
-        'white',
-        'medium',
-        3
-    ],
-    [
-        'Mini Plant Trio',
-        'https://example.com/planttrio.jpg',
-        189,
-        'green',
-        'low',
-        3
-    ],
-    [
-        'Flower & Chocolate Box',
-        'https://example.com/flowerchoco.jpg',
-        249,
-        'mixed',
-        'medium',
-        3
-    ],
-
-    // Plants (category 4)
     [
         'Peace Lily',
         'https://example.com/gift2.jpg',
         219.0,
         'white',
         'medium',
-        4
+        5
     ],
-    ['Areca Palm', 'https://example.com/palm.jpg', 259, 'green', 'high', 4],
+    ['Areca Palm', 'https://example.com/palm.jpg', 259, 'green', 'high', 5],
     [
         'Snake Plant',
         'https://example.com/snakeplant.jpg',
         189,
         'green',
         'low',
-        4
+        5
     ],
     [
         'Aromatic Candle',
@@ -190,27 +76,27 @@ const products = [
         150.0,
         'various',
         'medium',
-        4
+        5
     ],
-    ['ZZ Plant', 'https://example.com/zzplant.jpg', 149, 'green', 'low', 4],
+    ['ZZ Plant', 'https://example.com/zzplant.jpg', 149, 'green', 'low', 5],
     [
         'Rubber Plant',
         'https://example.com/rubberplant.jpg',
         189,
         'green',
         'medium',
-        4
+        5
     ],
-    ['Fiddle Leaf Fig', 'https://example.com/fig.jpg', 299, 'green', 'high', 4],
+    ['Fiddle Leaf Fig', 'https://example.com/fig.jpg', 299, 'green', 'high', 5],
 
-    // Orchids (category 5)
+    // Orchids (category_id = 6)
     [
         'White Orchid',
         'https://example.com/orchid1.jpg',
         219.0,
         'white',
         'medium',
-        5
+        6
     ],
     [
         'Pink Orchid',
@@ -218,7 +104,7 @@ const products = [
         229.0,
         'pink',
         'medium',
-        5
+        6
     ],
     [
         'Blue Orchid',
@@ -226,7 +112,7 @@ const products = [
         249.0,
         'blue',
         'medium',
-        5
+        6
     ],
     [
         'Mini Orchid',
