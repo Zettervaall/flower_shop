@@ -1,16 +1,9 @@
-const db = require('./database.sqlite');
+const db = require('./db');
 
 // Categories
-const categories = [
-    'Roses',
-    'Tulips',
-    'Succulent',
-    'Gift',
-    'Plants',
-    'Orchids'
-];
+const categories = ['Roses', 'Indoor', 'Outdoor', 'Succulent', 'Gift'];
 
-// Insert categories
+// Inserting categories
 const categoryStmt = db.prepare(
     `INSERT INTO categories (category_name) VALUES (?)`
 );
@@ -25,149 +18,33 @@ categoryStmt.finalize(() => {
     console.log('All categories inserted!');
 });
 
-// Products
+// Products data
 const products = [
-    // Roses (category_id = 1)
     [
-        'Classic Red Roses',
-        'https://example.com/redroses.jpg',
-        199,
+        'Rose Bouquet',
+        'https://example.com/rose.jpg',
+        249.99,
         'red',
         'medium',
         1
     ],
+    ['Cactus', 'https://example.com/cactus.jpg', 99.5, 'green', 'low', 4],
     [
-        'White Rose Arrangement',
-        'https://example.com/whiteroses.jpg',
-        209,
-        'white',
-        'medium',
-        1
-    ],
-    [
-        'Pink Rose Bouquet',
-        'https://example.com/pinkroses.jpg',
-        189,
-        'pink',
-        'medium',
-        1
-    ],
-    [
-        'Yellow Roses',
-        'https://example.com/yellowroses.jpg',
-        179,
+        'Sunflower Pot',
+        'https://example.com/sunflower.jpg',
+        179.0,
         'yellow',
-        'medium',
-        1
+        'high',
+        3
     ],
     [
-        'Mini Rose Pot',
-        'https://example.com/minirose.jpg',
-        99,
-        'red',
-        'medium',
-        1
-    ],
-
-    // Tulips (category_id = 2)
-    ['Red Tulips', 'https://example.com/redtulips.jpg', 129, 'red', 'low', 2],
-    [
-        'Yellow Tulips',
-        'https://example.com/yellowtulips.jpg',
-        139,
-        'yellow',
-        'low',
-        2
-    ],
-    [
-        'Mixed Tulips',
-        'https://example.com/mixedtulips.jpg',
-        149,
-        'mixed',
-        'low',
-        2
-    ],
-    [
-        'White Tulip Arrangement',
-        'https://example.com/whitetulips.jpg',
-        159,
-        'white',
-        'low',
-        2
-    ],
-    [
-        'Purple Tulips',
-        'https://example.com/purpletulips.jpg',
-        139,
+        'Orchid Gift Box',
+        'https://example.com/orchid.jpg',
+        329.0,
         'purple',
-        'low',
-        2
-    ],
-
-    // Succulents (category_id = 3)
-    ['Aloe Vera', 'https://example.com/aloe.jpg', 89, 'green', 'low', 3],
-    [
-        'Echeveria',
-        'https://example.com/echeveria.jpg',
-        79,
-        'blue-green',
-        'low',
-        3
-    ],
-    [
-        'Hens and Chicks',
-        'https://example.com/hensandchicks.jpg',
-        69,
-        'green',
-        'low',
-        3
-    ],
-    ['Zebra Plant', 'https://example.com/zebra.jpg', 99, 'green', 'low', 3],
-    ['Jade Plant', 'https://example.com/jade.jpg', 109, 'green', 'low', 3],
-
-    // Gifts (category_id = 4)
-    [
-        'Rose Gift Box',
-        'https://example.com/rosegift.jpg',
-        329,
-        'red',
         'medium',
-        4
+        5
     ],
-    [
-        'Succulent Gift Set',
-        'https://example.com/succgift.jpg',
-        199,
-        'mixed',
-        'low',
-        4
-    ],
-    [
-        'Orchid in Glass Dome',
-        'https://example.com/orchidgift.jpg',
-        359,
-        'white',
-        'medium',
-        4
-    ],
-    [
-        'Mini Plant Trio',
-        'https://example.com/planttrio.jpg',
-        189,
-        'green',
-        'low',
-        4
-    ],
-    [
-        'Flower & Chocolate Box',
-        'https://example.com/flowerchoco.jpg',
-        249,
-        'mixed',
-        'medium',
-        4
-    ],
-
-    // Plants (category_id = 5)
     [
         'Peace Lily',
         'https://example.com/peacelily.jpg',
@@ -243,7 +120,7 @@ const products = [
         269,
         'white',
         'medium',
-        6
+        5
     ],
     [
         'Orchid Basket',
@@ -251,7 +128,7 @@ const products = [
         299,
         'mixed',
         'medium',
-        6
+        5
     ],
     [
         'Golden Orchid',
@@ -259,7 +136,7 @@ const products = [
         289,
         'gold',
         'medium',
-        6
+        5
     ],
     [
         'Orchid Trio',
@@ -267,11 +144,11 @@ const products = [
         349,
         'mixed',
         'medium',
-        6
+        5
     ]
 ];
 
-// Insert products
+// Inserting products
 const productStmt = db.prepare(`
   INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
   VALUES (?, ?, ?, ?, ?, ?)
