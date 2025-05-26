@@ -1,4 +1,4 @@
-const db = require('./database.sqlite');
+const db = require('./database.js');
 
 // Categories
 const categories = ['Roses', 'Succulent', 'Gift', 'Plants', 'Orchids'];
