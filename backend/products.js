@@ -226,8 +226,26 @@ const products = [
         199,
         'purple',
         'medium',
-        5
+        4
     ],
+    [
+        'Mini Plant Trio',
+        'https://example.com/planttrio.jpg',
+        189,
+        'green',
+        'low',
+        4
+    ],
+    [
+        'Flower & Chocolate Box',
+        'https://example.com/flowerchoco.jpg',
+        249,
+        'mixed',
+        'medium',
+        4
+    ],
+
+    // Plants (category_id = 5)
     [
         'Double Stem Orchid',
         'https://example.com/doublestem.jpg',
@@ -262,7 +280,7 @@ const products = [
     ]
 ];
 
-// Inserting products
+// Insert products
 const productStmt = db.prepare(`
   INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
   VALUES (?, ?, ?, ?, ?, ?)
