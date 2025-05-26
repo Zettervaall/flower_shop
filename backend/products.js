@@ -1,7 +1,7 @@
 const db = require('./db');
 
 // Categories
-const categories = ['Roses', 'Indoor', 'Outdoor', 'Succulent', 'Gift'];
+const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
 
 // Inserting categories
 const categoryStmt = db.prepare(
