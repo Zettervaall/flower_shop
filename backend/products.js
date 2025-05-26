@@ -161,8 +161,8 @@ const products = [
     // Plants (category 4)
     [
         'Peace Lily',
-        'https://example.com/peacelily.jpg',
-        219,
+        'https://example.com/gift2.jpg',
+        219.0,
         'white',
         'medium',
         4
@@ -177,10 +177,18 @@ const products = [
         4
     ],
     [
-        'Spider Plant',
-        'https://example.com/spiderplant.jpg',
-        129,
-        'green-white',
+        'Aromatic Candle',
+        'https://example.com/gift7.jpg',
+        70.0,
+        'various',
+        'none',
+        3
+    ],
+    [
+        'Flower Pot Set',
+        'https://example.com/gift8.jpg',
+        150.0,
+        'various',
         'medium',
         4
     ],
@@ -198,32 +206,32 @@ const products = [
     // Orchids (category 5)
     [
         'White Orchid',
-        'https://example.com/whiteorchid.jpg',
-        219,
+        'https://example.com/orchid1.jpg',
+        219.0,
         'white',
         'medium',
         5
     ],
     [
         'Pink Orchid',
-        'https://example.com/pinkorchid.jpg',
-        229,
+        'https://example.com/orchid2.jpg',
+        229.0,
         'pink',
         'medium',
         5
     ],
     [
         'Blue Orchid',
-        'https://example.com/blueorchid.jpg',
-        249,
+        'https://example.com/orchid3.jpg',
+        249.0,
         'blue',
         'medium',
         5
     ],
     [
         'Mini Orchid',
-        'https://example.com/miniorchid.jpg',
-        199,
+        'https://example.com/orchid4.jpg',
+        199.0,
         'purple',
         'medium',
         4
@@ -248,32 +256,32 @@ const products = [
     // Plants (category_id = 5)
     [
         'Double Stem Orchid',
-        'https://example.com/doublestem.jpg',
-        269,
+        'https://example.com/orchid5.jpg',
+        269.0,
         'white',
         'medium',
-        5
+        4
     ],
     [
         'Orchid Basket',
-        'https://example.com/orchidbasket.jpg',
-        299,
+        'https://example.com/orchid6.jpg',
+        299.0,
         'mixed',
         'medium',
-        5
+        4
     ],
     [
         'Golden Orchid',
-        'https://example.com/goldenorchid.jpg',
-        289,
+        'https://example.com/orchid7.jpg',
+        289.0,
         'gold',
         'medium',
-        5
+        4
     ],
     [
         'Orchid Trio',
-        'https://example.com/orchidtrio.jpg',
-        349,
+        'https://example.com/orchid8.jpg',
+        349.0,
         'mixed',
         'medium',
         5
