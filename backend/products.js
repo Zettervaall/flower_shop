@@ -1,4 +1,11 @@
-const db = require('./db');
+console.log('🚀 Kör products.js');
+
+const db = require('./database');
+
+db.run('DELETE FROM products');
+db.run('DELETE FROM categories');
+
+console.log('🧹 Databasen rensad');
 
 // Categories
 const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
@@ -10,7 +17,9 @@ const categoryStmt = db.prepare(
 categories.forEach((category) => {
     categoryStmt.run([category], (error) => {
         if (error) {
-            console.error('Error inserting category:', error.message);
+            console.error('❌ Fel kategori:', category, error.message);
+        } else {
+            console.log('✅ Kategori inlagd:', category);
         }
     });
 });
@@ -129,7 +138,6 @@ const products = [
         'green',
         'low',
         4
-
     ],
     [
         'Flower & Chocolate Box',
@@ -183,7 +191,9 @@ const productStmt = db.prepare(`
 products.forEach((product) => {
     productStmt.run(product, (error) => {
         if (error) {
-            console.error('Error inserting product:', error.message);
+            console.error('❌ Fel produkt:', product[0], error.message);
+        } else {
+            console.log('✅ Produkt inlagd:', product[0]);
         }
     });
 });
