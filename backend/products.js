@@ -1,11 +1,10 @@
-console.log('🚀 Kör products.js');
 
 const db = require('./database');
 
+//Raderar innehåll så det inte blir dubletter
 db.run('DELETE FROM products');
 db.run('DELETE FROM categories');
 
-console.log('🧹 Databasen rensad');
 
 // Categories
 const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
@@ -17,9 +16,7 @@ const categoryStmt = db.prepare(
 categories.forEach((category) => {
     categoryStmt.run([category], (error) => {
         if (error) {
-            console.error('❌ Fel kategori:', category, error.message);
-        } else {
-            console.log('✅ Kategori inlagd:', category);
+            console.error('Fel vid inläsning av kategori:', category, error.message);
         }
     });
 });
@@ -191,9 +188,7 @@ const productStmt = db.prepare(`
 products.forEach((product) => {
     productStmt.run(product, (error) => {
         if (error) {
-            console.error('❌ Fel produkt:', product[0], error.message);
-        } else {
-            console.log('✅ Produkt inlagd:', product[0]);
+            console.error('Fel vid inläsning av produkt:', product[0], error.message);
         }
     });
 });

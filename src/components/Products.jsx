@@ -22,7 +22,7 @@ function Products() {
 
     return (
         <div>
-            <h2>🌼 Våra produkter</h2>
+            <h2>Rose & Rue</h2>
             <ul>
                 {products.map((product) => (
                     <li key={product.id}>
