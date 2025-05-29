@@ -28,12 +28,14 @@
     flex: 1;
     font-size: 1.125rem;
     font-weight: 300;
+    width: 60.66%;
+    margin-left: 25%;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    text-underline-offset: 4px;
+    text-underline-offset: 6px;
     font-family: 'Aboreto', cursive;
 }
 
@@ -46,18 +48,28 @@
 .nav-icons {
     display: flex;
     gap: 1.5rem;
-    color: white;
+    color: rgba(0, 0, 0, 0.844);
     padding: 0;
     background: none;
     border-radius: 0;
-    margin-left: 2rem;
+    margin: 1.3rem 0rem;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 3rem;
+    padding-right: 9rem;
 }
 
 .nav-icons svg {
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
-.nav-icons svg:hover {
-    color: #4b5563;
+/* LINE */
+.break-line {
+    height: 1.5px;
+    background-color: rgba(0, 0, 0, 0.844);
+    width: 66.66vw;
+    margin-left: 33.33vw;
+    margin-top: 1.2rem;
+    border-radius: 1px;
 }
