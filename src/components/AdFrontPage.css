@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #c0345b;
-    border-bottom-right-radius: 150px;
-    max-width: 450px;
-    min-height: 500px;
+    border-bottom-right-radius: 100px;
+    margin-left: 1px;
+    max-width: 490px;
+    min-height: 550px;
     padding: 6px 2px;
     text-align: center;
     color: white;
@@ -15,17 +18,16 @@
 }
 
 .circle {
-    width: 17rem;
-    height: 17rem;
+    width: 19rem;
+    height: 19rem;
     border-radius: 50%;
-    background-color: #eba9b7;
+    background-color: #eba9b7f3;
     margin: 0 auto;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    display: block;
 }
 
 .circle-image {
@@ -43,16 +45,17 @@
 
 .text-overlay {
     position: absolute;
-    width: 60%;
+    width: 90%;
+    top: 20%;
     left: 0;
-    top: 30%;
-    padding: 0 10px;
+    padding-right: 3rem;
     color: white;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2.4rem;
     line-height: 1.4;
     z-index: 2;
-    text-align: left;
+    text-align: right;
+    font-family: 'Aboreto', cursive;
+    transform: translate(-30%, -10%);
 }
 
 .cta-button {
@@ -65,4 +68,5 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     cursor: pointer;
+    font-family: 'Aboreto', cursive;
 }
