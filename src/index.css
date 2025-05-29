@@ -2,9 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html,
 body {
     width: 100%;
+    background-color: rgba(255, 249, 239, 1);
 }
