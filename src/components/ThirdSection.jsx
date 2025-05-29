@@ -20,11 +20,11 @@ const ThirdSection = () => {
             <div className="text-box bg2">
                 <p className="textbox2">
                     Flowers are the poetry of the earth, writing messages of
-                    hope and love with every petal
+                    hope and love with every petal.
                 </p>
             </div>
 
-            <div className="text-box pink">
+            <div className="text-box pink-lower">
                 <p className="textbox3">
                     Giving flowers is like offering a piece of your heart, a
                     silent message of care and kindness. In their bloom, we

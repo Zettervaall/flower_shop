@@ -120,6 +120,7 @@
     z-index: 10;
     background: none;
     font-family: 'Aboreto', cursive;
+    font-weight: bolder;
     font-style: italic;
     margin-top: -16rem;
 }
