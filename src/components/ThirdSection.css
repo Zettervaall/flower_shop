@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
 body {
     margin: 0;
     font-family: 'Georgia', serif;
@@ -7,18 +9,23 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 1.2fr 1fr;
-    grid-template-rows: 200px 400px;
+    grid-template-rows: 200px 300px;
     gap: 0;
     padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.image {
+.image1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+}
+
+.image2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .text-box {
@@ -30,12 +37,25 @@ body {
     color: rgb(7, 7, 7);
     font-size: 1rem;
     line-height: 1.6;
-    border-radius: 1rem;
-    box-shadow: none;
+}
+
+.text-bg1 {
+    color: #bf2f4d;
+    font-size: 1.2rem;
+    font-family: Aboreto;
+    font-weight: bolder;
+}
+
+.textbox2,
+.textbox3 {
+    color: #ffe5e1;
+    font-size: 1.2rem;
+    font-family: Aboreto;
+    font-weight: bolder;
 }
 
 .pink {
-    background-color: #f6c4c4;
+    background-color: #bf2f4d;
     color: #8a2c2b;
 }
 
@@ -44,11 +64,11 @@ body {
 }
 
 .bg1 {
-    background-color: #ffadad;
+    background-color: #f6c4c4;
 }
 
 .bg2 {
-    background-color: #ffd6a5;
+    background-color: #bf2f4d;
 }
 
 .top-right-rounded {
@@ -77,7 +97,7 @@ body {
 
 .container > div:nth-child(3) {
     grid-column: 3 / 4;
-    grid-row: 1 / 3; /* span both rows */
+    grid-row: 1 / 2;
 }
 
 .container > div:nth-child(4) {

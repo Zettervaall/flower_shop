@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
+.card-container,
+.ad-frontpage,
+.circle {
+    overflow: visible !important;
+}
+
 .ad-frontpage {
     background-color: #fff9ef;
     padding-top: 4rem;
@@ -20,7 +26,7 @@
     text-align: center;
     color: white;
     position: relative;
-    font-family: 'Optima', sans-serif;
+    font-family: 'Aboreto', sans-serif;
 }
 
 .circle {
@@ -34,6 +40,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding-left: 3rem;
 }
 
 .circle-image {
@@ -50,6 +57,7 @@
 }
 
 .text-overlay {
+    overflow: visible !important;
     position: absolute;
     width: 90%;
     top: 20%;
@@ -58,7 +66,7 @@
     color: white;
     font-size: 2.4rem;
     line-height: 1.4;
-    z-index: 2;
+    z-index: 50;
     text-align: right;
     font-family: 'Aboreto', cursive;
     transform: translate(-30%, -10%);

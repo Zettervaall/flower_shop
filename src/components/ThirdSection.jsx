@@ -9,29 +9,26 @@ const ThirdSection = () => {
                 <img
                     src={flower1}
                     alt="Orange-pink flower with grey background"
-                    className="image"
+                    className="image1"
                 />
             </div>
 
             <div className="text-box bg1">
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                <p className="text-bg1">Flowers are love’s truest language.</p>
+            </div>
+
+            <div className="text-box bg2">
+                <p className="textbox2">
+                    Flowers are the poetry of the earth, writing messages of
+                    hope and love with every petal
                 </p>
             </div>
 
-            <div className="text-box bg2 top-right-rounded">
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                </p>
-            </div>
-
-            <div className="text-box pink bottom-left-rounded">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+            <div className="text-box pink">
+                <p className="textbox3">
+                    Giving flowers is like offering a piece of your heart, a
+                    silent message of care and kindness. In their bloom, we
+                    share beauty that words often fail to express.
                 </p>
             </div>
 
@@ -39,7 +36,7 @@ const ThirdSection = () => {
                 <img
                     src={flower2}
                     alt="Big coral colored flower with grey background"
-                    className="image"
+                    className="image2"
                 />
             </div>
         </div>
