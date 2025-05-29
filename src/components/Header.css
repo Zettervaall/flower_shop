@@ -2,23 +2,39 @@
     background-color: rgba(246, 195, 186, 1);
     width: 100%;
     height: 40rem;
-    padding: 1rem;
 
+    position: relative;
+    display: flex;
 }
 
-.header_content{
-display: flex;
+.navbar_logo {
+    position: absolute;
+    color: rgb(255, 251, 247);
+    font-size: 1.5rem;
+    margin: 1rem;
+}
 
+.header_content {
+    display: flex;
 }
 
 .logo {
     margin-top: 10rem;
-    margin-left: 65%;
     font-family: 'Aboreto';
     font-size: 2.5rem;
 }
 
 .img_poeny img {
-    height: 40rem;
+    display: flex;
+    height: 35rem;
+    width: auto;
+    align-self: flex-end;
+    transform: scaleX(-1);
+}
 
+.img_poeny {
+    display: flex;
+    margin-left: 60%;
+    align-items: flex-end;
+    margin-bottom: -1rem;
 }
