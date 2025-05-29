@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaUser, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import './Navigation.css';
 
@@ -14,16 +13,13 @@ const Navbar = () => {
                         <a href="/tips">TIPS</a>
                         <a href="/contact">CONTACT</a>
                     </div>
+                    <div className="nav-icons">
+                        <FaUser />
+                        <FaSearch />
+                        <FaShoppingCart />
+                    </div>
                 </div>
             </nav>
-
-            <div className="nav-icons">
-                <FaUser />
-                <FaSearch />
-                <FaShoppingCart />
-            </div>
-
-            <div className="break-line"></div>
         </>
     );
 };

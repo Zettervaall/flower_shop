@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
+.ad-frontpage {
+    background-color: #fff9ef;
+    padding-top: 4rem;
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #c0345b;
-    border-bottom-right-radius: 100px;
-    margin-left: 1px;
+    background-color: v#bf2f4d;
+    border-bottom-right-radius: 90px;
+    border-top-left-radius: 90px;
+    margin-left: 2vw;
     max-width: 490px;
     min-height: 550px;
     padding: 6px 2px;
@@ -69,4 +75,43 @@
     font-size: 18px;
     cursor: pointer;
     font-family: 'Aboreto', cursive;
+}
+
+/* RIGHT HAND SIDE */
+.right-side {
+    position: relative;
+    width: 100%;
+    background-color: #fff9ef;
+    overflow: visible;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+    margin-right: 0;
+    align-items: flex-start;
+}
+
+.flower-image {
+    max-width: 700px;
+    height: auto;
+    transform: scaleX(-1);
+    transform-origin: center;
+    margin-top: -10rem;
+    position: relative;
+    z-index: 5;
+}
+
+.overlay-text {
+    position: absolute;
+    right: 15%;
+    top: 35%;
+    color: #7ba96f;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: serif;
+    max-width: 40rem;
+    z-index: 10;
+    background: none;
+    font-family: 'Aboreto', cursive;
+    font-style: italic;
+    margin-top: -16rem;
 }
