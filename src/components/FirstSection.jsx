@@ -1,5 +1,5 @@
 import pinkBouquet from '../assets/pinkBouquet.jpg';
-import flowerImage from '../assets/pinkFlower.png';
+import flowerImage from '../assets/Lily_Pink.png';
 
 import './FirstSection.css';
 
@@ -21,18 +21,21 @@ export default function FirstSection() {
                 </div>
             </div>
             <div className="right-side">
-                <div className="overlay-text">
-                    <p>
-                        Flowers don’t tell, they show. They’re a quiet language
-                        of the earth, whispering stories of renewal, hope, and
-                        the enduring power of life’s gentle beauty.
-                    </p>
+                <div className="overlay-wrapper">
+                    <div className="overlay-text">
+                        <p>
+                            Flowers don’t tell, they show. They’re a quiet
+                            language of the earth, whispering stories of
+                            renewal, hope, and the enduring power of life’s
+                            gentle beauty.
+                        </p>
+                    </div>
+                    <img
+                        src={flowerImage}
+                        alt="Big pink flower"
+                        className="flower-image"
+                    />
                 </div>
-                <img
-                    src={flowerImage}
-                    alt="Big pink flower"
-                    className="flower-image"
-                />
             </div>
         </div>
     );
