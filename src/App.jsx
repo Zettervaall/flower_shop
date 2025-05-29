@@ -6,15 +6,17 @@ import Products from './components/Products';
 import '@fontsource/aboreto'; // Standard: 400 vikt
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import AdFrontPage from './components/FirstSection';
+import FirstSection from './components/FirstSection';
+import ThirdSection from './components/ThirdSection';
 
 function App() {
     return (
         <>
             <Header />
             <Navigation />
-            <AdFrontPage />
+            <FirstSection />
             <Products />
+            <ThirdSection />
         </>
     );
 }

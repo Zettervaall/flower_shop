@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: v#bf2f4d;
+    background-color: #bf2f4d;
     border-bottom-right-radius: 90px;
     border-top-left-radius: 90px;
     margin-left: 2vw;
@@ -72,7 +72,7 @@
     border: none;
     border-radius: 12px 0 12px 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     font-family: 'Aboreto', cursive;
 }
