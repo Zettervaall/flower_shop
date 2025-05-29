@@ -4,14 +4,16 @@ import Products from './components/Products';
 
 //fonts
 import '@fontsource/aboreto'; // Standard: 400 vikt
-
 import Header from './components/Header';
+import Navigation from './components/Navigation';
+import AdFrontPage from './components/FirstSection';
 
 function App() {
     return (
         <>
             <Header />
-            <h1>hejsan</h1>
+            <Navigation />
+            <AdFrontPage />
             <Products />
         </>
     );

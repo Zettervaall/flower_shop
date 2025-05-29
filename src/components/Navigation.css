@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 4rem;
+    background-color: #bf2f4d;
+    color: white;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    font-family: 'Aboreto', cursive;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.125rem;
+    font-weight: 300;
+    flex: 1;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    text-underline-offset: 6px;
+    font-family: 'Aboreto', cursive;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/*  ICONS */
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    color: rgba(255, 255, 255, 0.844);
+    font-size: 3rem;
+    background-color: none;
+}
+
+.nav-icons svg {
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+}
+
+/* LINE */
+.break-line {
+    height: 1.5px;
+    background-color: rgba(0, 0, 0, 0.844);
+    width: 66.66vw;
+    margin-left: 33.33vw;
+    margin-top: 0.5rem;
+    border-radius: 1px;
+}
