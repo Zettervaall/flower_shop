@@ -8,20 +8,30 @@
 }
 
 .navbar_logo {
-    position: absolute;
     color: rgb(255, 251, 247);
     font-size: 1.5rem;
     margin: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.R {
+    color: #bf2f4d;
+    transform: rotate(-20deg);
+    display: inline-block;
 }
 
 .header_content {
     display: flex;
+    padding-left: 10rem;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .logo {
     margin-top: 10rem;
     font-family: 'Aboreto';
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .img_poeny img {
@@ -30,11 +40,48 @@
     width: auto;
     align-self: flex-end;
     transform: scaleX(-1);
+    z-index: 1;
 }
 
 .img_poeny {
     display: flex;
-    margin-left: 60%;
     align-items: flex-end;
     margin-bottom: -1rem;
+}
+
+.header_text {
+    margin-left: 10rem;
+    margin-top: 25rem;
+    position: absolute;
+}
+
+.header_text h1 {
+    margin-left: -3rem;
+    z-index: 10;
+    position: relative;
+    font-family: 'Aboreto';
+}
+
+.header_text p {
+    width: 15rem;
+    z-index: 10;
+
+    position: relative;
+}
+
+.color_block {
+    position: absolute;
+    top: -0.6rem;
+    left: 4.4rem;
+    width: 90%;
+    height: 140%;
+    background-color: #bf2f4d;
+    z-index: 0;
+
+    border-radius: 20px;
+}
+
+.white-text {
+    color: rgb(248, 238, 228);
+    padding-left: 0.1rem;
 }
