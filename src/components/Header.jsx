@@ -20,17 +20,17 @@ function Header() {
                     <div className="color_block"></div>
                 </div>
                 <div className="header_content">
-                    <div className="img_poeny">
+                    {/* <div className="img_poeny">
                         <img
                             src="src\assets\1748529422710zt4r3ky6.webp"
                             alt=""
                         />
-                    </div>
+                    </div> */}
                     <div className="logo">
                         <h1>
-                            <span>ROSE</span>
+                            <span className='rose'>ROSE</span>
                             <br />
-                            <span>& RUE</span>
+                            <span className='rue'>& Rue</span>
                         </h1>
                     </div>
                 </div>
