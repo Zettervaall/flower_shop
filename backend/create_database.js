@@ -1,9 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const database = new sqlite3.Database('./flowers.sqlite');
 
-database.run('DELETE FROM products');
-database.run('DELETE FROM categories');
-
 database.serialize(() => {
     database.run(`
     CREATE TABLE IF NOT EXISTS categories (

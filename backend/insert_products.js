@@ -1,4 +1,4 @@
-const db = require('./database');
+const db = require('./create_database');
 
 //Raderar innehåll så det inte blir dubletter
 db.run('DELETE FROM products');

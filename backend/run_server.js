@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./database');
+const db = require('./create_database');
 
 const app = express();
 app.use(cors()); // tillåter frontend att anropa API:t

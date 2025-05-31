@@ -8,7 +8,6 @@ import ThirdSection from './components/ThirdSection';
 import AboutSection from './components/AboutSection';
 import CarouselSection from './components/CarouselSection';
 
-import Products from './components/Products';
 import ProductPage from './pages/ProductPage'; //product-sidan
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
                     element={
                         <>
                             <FirstSection />
-                            <Products />
                             <ThirdSection />
                             <AboutSection />
                             <CarouselSection />
