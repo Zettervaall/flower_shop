@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import FirstSection from './components/FirstSection';
 import ThirdSection from './components/ThirdSection';
 import AboutSection from './components/AboutSection';
+import CarouselSection from './components/CarouselSection';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             <Products />
             <ThirdSection />
             <AboutSection />
+            <CarouselSection />
         </>
     );
 }
