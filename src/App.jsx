@@ -1,21 +1,38 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Products from './components/Products';
 
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import FirstSection from './components/FirstSection';
 import ThirdSection from './components/ThirdSection';
 
+import Products from './components/Products';
+import ProductPage from './pages/ProductPage'; //product-sidan
+
 function App() {
     return (
-        <>
+        <Router>
             <Header />
             <Navigation />
-            <FirstSection />
-            <Products />
-            <ThirdSection />
-        </>
+
+            <Routes>
+
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <FirstSection />
+                            <Products />
+                            <ThirdSection />
+                        </>
+                    }
+                />
+
+
+                <Route path="/flowers" element={<ProductPage />} />
+
+            </Routes>
+        </Router>
     );
 }
 

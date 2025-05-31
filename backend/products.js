@@ -1,10 +1,8 @@
-
 const db = require('./database');
 
 //Raderar innehåll så det inte blir dubletter
 db.run('DELETE FROM products');
 db.run('DELETE FROM categories');
-
 
 // Categories
 const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
@@ -16,7 +14,11 @@ const categoryStmt = db.prepare(
 categories.forEach((category) => {
     categoryStmt.run([category], (error) => {
         if (error) {
-            console.error('Fel vid inläsning av kategori:', category, error.message);
+            console.error(
+                'Fel vid inläsning av kategori:',
+                category,
+                error.message
+            );
         }
     });
 });
@@ -68,14 +70,7 @@ const products = [
         'low',
         5
     ],
-    [
-        'Aromatic Candle',
-        'https://example.com/gift7.jpg',
-        70.0,
-        'various',
-        'none',
-        3
-    ],
+
     [
         'Flower Pot Set',
         'https://example.com/gift8.jpg',
@@ -188,7 +183,11 @@ const productStmt = db.prepare(`
 products.forEach((product) => {
     productStmt.run(product, (error) => {
         if (error) {
-            console.error('Fel vid inläsning av produkt:', product[0], error.message);
+            console.error(
+                'Fel vid inläsning av produkt:',
+                product[0],
+                error.message
+            );
         }
     });
 });
