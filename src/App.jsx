@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import FirstSection from './components/FirstSection';
 import ThirdSection from './components/ThirdSection';
+import AboutSection from './components/AboutSection';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <FirstSection />
             <Products />
             <ThirdSection />
+            <AboutSection />
         </>
     );
 }

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+.about-section-wrapper {
+    background-color: #fff9ef;
+}
+
+.logo-aboutsection {
+    background-color: #fff9ef;
+    color: #2f6b3a;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+.rose-aboutsection {
+    font-family: 'Aboreto';
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #7ba96f;
+}
+
+.rue-aboutsection {
+    font-family: 'Tangerine';
+    font-size: 3rem;
+    color: #7ba96f;
+    margin-left: 3rem;
+}
+
+.about-description {
+    position: relative;
+    background-color: #fff9ef;
+    text-align: center;
+    color: #7ba96f;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Aboreto';
+    margin: 0rem auto;
+    max-width: 42rem;
+}
