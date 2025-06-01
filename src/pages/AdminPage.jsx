@@ -7,7 +7,6 @@ function AdminPage() {
     const [selectedProductId, setSelectedProductId] = useState(null);
     const [refreshToggle, setRefreshToggle] = useState(false);
 
-    // Fetch products on mount and when refreshToggle changes
     useEffect(() => {
         fetch('http://localhost:3000/products')
             .then((res) => res.json())
@@ -15,7 +14,6 @@ function AdminPage() {
             .catch((error) => console.error('Error fetching products:', error));
     }, [refreshToggle]);
 
-    // Fetch categories on mount
     useEffect(() => {
         fetch('http://localhost:3000/categories')
             .then((res) => res.json())
@@ -25,81 +23,24 @@ function AdminPage() {
             );
     }, []);
 
-    // When a product is saved, refresh products list and clear selection
     function handleSaved() {
         setRefreshToggle(!refreshToggle);
         setSelectedProductId(null);
     }
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="admin-page">
             <h1>Admin Page</h1>
 
             <button
+                className="add-new-product-button"
                 onClick={() => setSelectedProductId(null)}
-                style={{ marginBottom: '20px' }}
             >
                 Add New Product
             </button>
 
-            <div style={{ display: 'flex', gap: '40px' }}>
-                {/* Products grouped by category */}
-                <div style={{ flex: 1, maxHeight: '80vh', overflowY: 'auto' }}>
-                    <h2>Products by Category</h2>
-                    {categories.length === 0 && <p>Loading categories...</p>}
-                    {categories.map((category) => (
-                        <div key={category.id} style={{ marginBottom: '30px' }}>
-                            <h3>{category.category_name}</h3>
-                            <ul
-                                style={{
-                                    listStyleType: 'none',
-                                    paddingLeft: 0
-                                }}
-                            >
-                                {products.filter(
-                                    (p) => p.category_id === category.id
-                                ).length === 0 && (
-                                    <li>
-                                        <i>No products in this category</i>
-                                    </li>
-                                )}
-                                {products
-                                    .filter(
-                                        (product) =>
-                                            product.category_id === category.id
-                                    )
-                                    .map((product) => (
-                                        <li
-                                            key={product.id}
-                                            style={{ marginBottom: '8px' }}
-                                        >
-                                            <button
-                                                onClick={() =>
-                                                    setSelectedProductId(
-                                                        product.id
-                                                    )
-                                                }
-                                                style={{
-                                                    background: 'none',
-                                                    border: 'none',
-                                                    color: 'blue',
-                                                    cursor: 'pointer',
-                                                    textDecoration: 'underline',
-                                                    padding: 0,
-                                                    fontSize: '1rem'
-                                                }}
-                                            >
-                                                {product.product_name}
-                                            </button>
-                                        </li>
-                                    ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Product form */}
-                <div style={{ flex: 1 }}>
+            <div className="admin-content">
+                <div className="product-form-container">
                     <h2>
                         {selectedProductId ? 'Edit Product' : 'Add New Product'}
                     </h2>
@@ -108,6 +49,42 @@ function AdminPage() {
                         onSaved={handleSaved}
                     />
                 </div>
+            </div>
+
+            <div className="product-list">
+                <h2>Products by Category</h2>
+                {categories.length === 0 && <p>Loading categories...</p>}
+                {categories.map((category) => (
+                    <div key={category.id} className="category-group">
+                        <h3>{category.category_name}</h3>
+                        <ul className="product-items">
+                            {products.filter(
+                                (p) => p.category_id === category.id
+                            ).length === 0 && (
+                                <li>
+                                    <i>No products in this category</i>
+                                </li>
+                            )}
+                            {products
+                                .filter(
+                                    (product) =>
+                                        product.category_id === category.id
+                                )
+                                .map((product) => (
+                                    <li key={product.id}>
+                                        <button
+                                            className="product-name-button"
+                                            onClick={() =>
+                                                setSelectedProductId(product.id)
+                                            }
+                                        >
+                                            {product.product_name}
+                                        </button>
+                                    </li>
+                                ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
         </div>
     );
