@@ -13,7 +13,7 @@ function ProductForm({ productId, onSaved }) {
     // Store error messages for each field
     const [errors, setErrors] = useState({});
 
-    // Store a general success message
+    // Success message
     const [successMessage, setSuccessMessage] = useState('');
 
     useEffect(() => {
@@ -65,7 +65,6 @@ function ProductForm({ productId, onSaved }) {
         })
             .then((response) => {
                 if (!response.ok) {
-                    // If API returns JSON with error details, parse it here (optional)
                     throw new Error(
                         'Something went wrong while saving the product.'
                     );
@@ -79,13 +78,13 @@ function ProductForm({ productId, onSaved }) {
                 }
             })
             .catch((error) => {
-                // Example: set a general error
                 setErrors({
                     general: error.message || 'Unknown error occurred'
                 });
             });
     }
 
+    // Input fields
     return (
         <form onSubmit={handleSubmit} noValidate>
             <div>
