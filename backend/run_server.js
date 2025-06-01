@@ -37,22 +37,93 @@ app.get('/categories', (req, res) => {
     });
 });
 
-// ADMIN SIDA
-// Lägg till ny produkt
-app.post('/products', (req, res) => {
-    const { product_name, image_url, price, color, water_needs, category_id } = req.body;
 
-    const query = `
-        INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
-        VALUES (?, ?, ?, ?, ?, ?)
-    `;
-    db.run(query, [product_name, image_url, price, color, water_needs, category_id], function (error) {
-        if (error) {
-            console.error('Fel vid inläsning:', error.message);
-            return res.status(500).json({ error: 'Kunde inte lägga till produkt.' });
+app.get('/product/:productId', (req, res) => {
+    db.get(
+        'SELECT * FROM products WHERE id = ?',
+        req.params.productId,
+        (err, rows) => {
+            if (err) {
+                console.error('Fel vid hämtning:', err.message);
+                return res
+                    .status(500)
+                    .json({ error: 'Något gick fel med databasen.' });
+            }
+            res.json(rows);
         }
-        res.json({ success: true, id: this.lastID });
+    );
+});
+
+app.post('/product', (req, res) => {
+    const { product_name, image_url, price, color, water_needs, category_id } =
+        req.body;
+
+    const productStmt = db.prepare(`
+  INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
+  VALUES (?, ?, ?, ?, ?, ?)
+`);
+
+    productStmt.run(
+        product_name,
+        image_url,
+        price,
+        color,
+        water_needs,
+        category_id,
+        (error) => {
+            if (error) {
+                console.error(
+                    'Fel vid inläsning av produkt:',
+                    product[0],
+                    error.message
+                );
+            }
+        }
+    );
+    productStmt.finalize(() => {
+        console.log('Product inserted!');
     });
+    res.status(200).send('');
+});
+
+app.put('/product/:productId', (req, res) => {
+    const { product_name, image_url, price, color, water_needs, category_id } =
+        req.body;
+
+    const productStmt = db.prepare(`
+UPDATE products
+SET product_name = ?,
+    image_url = ?,
+    price = ?,
+    color = ?,
+    water_needs = ?,
+    category_id = ?
+WHERE id = ?;
+`);
+
+    productStmt.run(
+        product_name,
+        image_url,
+        price,
+        color,
+        water_needs,
+        category_id,
+        req.params.productId,
+        (error) => {
+            if (error) {
+                console.error(
+                    'Fel vid inläsning av produkt:',
+                    product[0],
+                    error.message
+                );
+            }
+        }
+    );
+    productStmt.finalize(() => {
+        console.log('Product updated!');
+    });
+    res.status(200).send('');
+
 });
 
 // startar servern
