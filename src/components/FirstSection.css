@@ -105,7 +105,7 @@
 }
 
 .flower-image {
-    max-width: 480px;
+    max-width: 400px;
     transform-origin: center;
     transform: translateX(5vw);
     margin-top: -3rem;

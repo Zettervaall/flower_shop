@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/products', (req, res) => {
     db.all('SELECT * FROM products', (err, rows) => {
         if (err) {
-            console.error('Fel vid hämtning:', err.message);
+            console.error('Fel vid hämtning:', error.message);
             return res
                 .status(500)
                 .json({ error: 'Något gick fel med databasen.' });
@@ -36,6 +36,7 @@ app.get('/categories', (req, res) => {
         res.json(rows);
     });
 });
+
 
 app.get('/product/:productId', (req, res) => {
     db.get(
@@ -122,6 +123,7 @@ WHERE id = ?;
         console.log('Product updated!');
     });
     res.status(200).send('');
+
 });
 
 // startar servern
