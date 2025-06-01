@@ -36,7 +36,7 @@ const products = [
         'medium',
         1
     ],
-    ['Cactus', 'https://example.com/cactus.jpg', 99.5, 'green', 'low', 4],
+    ['Cactus', './assets/bridal-bouquet.png', 99.5, 'green', 'low', 4],
     [
         'Sunflower Pot',
         'https://example.com/sunflower.jpg',
