@@ -30,14 +30,7 @@ categoryStmt.finalize(() => {
 const products = [
     ['Rose Bouquet', './assets/bridal-bouquet.png', 249.99, 'red', 'medium', 1],
     ['Cactus', './assets/bridal-bouquet.png', 99.5, 'green', 'low', 4],
-    [
-        'Sunflower Pot',
-        'https://example.com/sunflower.jpg',
-        179.0,
-        'yellow',
-        'high',
-        3
-    ],
+    ['Sunflower Pot', './assets/poppy_orange.png', 179.0, 'yellow', 'high', 3],
     [
         'Orchid Gift Box',
         './assets/bridal-bouquet.png',
@@ -46,27 +39,13 @@ const products = [
         'medium',
         5
     ],
-    [
-        'Peace Lily',
-        'https://example.com/gift2.jpg',
-        219.0,
-        'white',
-        'medium',
-        5
-    ],
-    ['Areca Palm', 'https://example.com/palm.jpg', 259, 'green', 'high', 5],
-    [
-        'Snake Plant',
-        'https://example.com/snakeplant.jpg',
-        189,
-        'green',
-        'low',
-        5
-    ],
+    ['Peace Lily', './assets/poppy_orange.png', 219.0, 'white', 'medium', 5],
+    ['Areca Palm', './assets/poppy_orange.png', 259, 'green', 'high', 5],
+    ['Snake Plant', './assets/poppy_orange.png', 189, 'green', 'low', 5],
 
     [
         'Flower Pot Set',
-        './assets/bridal-bouquet.png',
+        './assets/poppy_orange.png',
         150.0,
         'various',
         'medium',
@@ -84,22 +63,8 @@ const products = [
         'medium',
         4
     ],
-    [
-        'Pink Orchid',
-        'https://example.com/orchid2.jpg',
-        229.0,
-        'pink',
-        'medium',
-        6
-    ],
-    [
-        'Blue Orchid',
-        'https://example.com/orchid3.jpg',
-        249.0,
-        'blue',
-        'medium',
-        6
-    ],
+    ['Pink Orchid', './assets/poppy_orange.png', 229.0, 'pink', 'medium', 6],
+    ['Blue Orchid', './assets/poppy_orange.png', 249.0, 'blue', 'medium', 6],
     [
         'Mini Orchid',
         './assets/bridal-bouquet.png',
@@ -108,17 +73,10 @@ const products = [
         'medium',
         4
     ],
-    [
-        'Mini Plant Trio',
-        'https://example.com/planttrio.jpg',
-        189,
-        'green',
-        'low',
-        4
-    ],
+    ['Mini Plant Trio', './assets/poppy_orange.png', 189, 'green', 'low', 4],
     [
         'Flower & Chocolate Box',
-        'https://example.com/flowerchoco.jpg',
+        './assets/poppy_orange.png',
         249,
         'mixed',
         'medium',
@@ -150,14 +108,7 @@ const products = [
         'medium',
         4
     ],
-    [
-        'Orchid Trio',
-        'https://example.com/orchid8.jpg',
-        349.0,
-        'mixed',
-        'medium',
-        5
-    ]
+    ['Orchid Trio', './assets/poppy_orange.png', 349.0, 'mixed', 'medium', 5]
 ];
 
 // Insert products
