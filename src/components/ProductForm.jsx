@@ -10,14 +10,19 @@ function ProductForm({ productId, onSaved }) {
         category_id: ''
     });
 
-    // If productId exists, fetch the product and fill in the form
+    // Store error messages for each field
+    const [errors, setErrors] = useState({});
+
+    // Store a general success message
+    const [successMessage, setSuccessMessage] = useState('');
+
     useEffect(() => {
         if (productId) {
             fetch(`http://localhost:3000/product/${productId}`)
                 .then((response) => response.json())
                 .then((data) => setForm(data))
                 .catch((error) => {
-                    console.error('Error fetching product:', error);
+                    setErrors({ general: 'Error fetching product data.' });
                 });
         }
     }, [productId]);
@@ -29,11 +34,24 @@ function ProductForm({ productId, onSaved }) {
             ...previousForm,
             [fieldName]: fieldValue
         }));
+
+        // Clear error for this field on change
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            [fieldName]: '',
+            general: ''
+        }));
+
+        // Clear success message on any change
+        setSuccessMessage('');
     }
 
-    // Form submission
     function handleSubmit(event) {
         event.preventDefault();
+
+        // Clear previous errors and messages
+        setErrors({});
+        setSuccessMessage('');
 
         const httpMethod = productId ? 'PUT' : 'POST';
         const url = productId
@@ -47,66 +65,130 @@ function ProductForm({ productId, onSaved }) {
         })
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error('Something went wrong');
+                    // If API returns JSON with error details, parse it here (optional)
+                    throw new Error(
+                        'Something went wrong while saving the product.'
+                    );
                 }
                 return response.json();
             })
             .then(() => {
-                alert('Product saved successfully!');
+                setSuccessMessage('Product saved successfully!');
                 if (onSaved) {
                     onSaved();
                 }
             })
             .catch((error) => {
-                alert(error.message);
+                // Example: set a general error
+                setErrors({
+                    general: error.message || 'Unknown error occurred'
+                });
             });
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                name="product_name"
-                value={form.product_name}
-                onChange={handleChange}
-                placeholder="Product Name"
-                required
-            />
-            <input
-                name="image_url"
-                value={form.image_url}
-                onChange={handleChange}
-                placeholder="Image URL"
-                required
-            />
-            <input
-                name="price"
-                type="number"
-                value={form.price}
-                onChange={handleChange}
-                placeholder="Price"
-                required
-            />
-            <input
-                name="color"
-                value={form.color}
-                onChange={handleChange}
-                placeholder="Color"
-            />
-            <input
-                name="water_needs"
-                value={form.water_needs}
-                onChange={handleChange}
-                placeholder="Water Needs"
-            />
-            <input
-                name="category_id"
-                type="number"
-                value={form.category_id}
-                onChange={handleChange}
-                placeholder="Category ID"
-                required
-            />
+        <form onSubmit={handleSubmit} noValidate>
+            <div>
+                <input
+                    name="product_name"
+                    value={form.product_name}
+                    onChange={handleChange}
+                    placeholder="Product Name"
+                    required
+                />
+                {errors.product_name && (
+                    <div style={{ color: 'red' }}>{errors.product_name}</div>
+                )}
+            </div>
+
+            <div>
+                <input
+                    name="image_url"
+                    value={form.image_url}
+                    onChange={handleChange}
+                    placeholder="Image URL"
+                    required
+                />
+                {errors.image_url && (
+                    <div style={{ color: 'red' }}>{errors.image_url}</div>
+                )}
+            </div>
+
+            <div>
+                <input
+                    name="price"
+                    type="number"
+                    value={form.price}
+                    onChange={handleChange}
+                    placeholder="Price"
+                    required
+                />
+                {errors.price && (
+                    <div style={{ color: 'red' }}>{errors.price}</div>
+                )}
+            </div>
+
+            <div>
+                <input
+                    name="color"
+                    value={form.color}
+                    onChange={handleChange}
+                    placeholder="Color"
+                />
+                {errors.color && (
+                    <div style={{ color: 'red' }}>{errors.color}</div>
+                )}
+            </div>
+
+            <div>
+                <label>Water Needs:</label>
+                <br />
+                {['Low', 'Medium', 'High'].map((level) => (
+                    <label key={level} style={{ marginRight: '10px' }}>
+                        <input
+                            type="radio"
+                            name="water_needs"
+                            value={level}
+                            checked={form.water_needs === level}
+                            onChange={handleChange}
+                        />
+                        {level}
+                    </label>
+                ))}
+                {errors.water_needs && (
+                    <div style={{ color: 'red' }}>{errors.water_needs}</div>
+                )}
+            </div>
+
+            <div>
+                <input
+                    name="category_id"
+                    type="number"
+                    value={form.category_id}
+                    onChange={handleChange}
+                    placeholder="Category ID"
+                    required
+                />
+                {errors.category_id && (
+                    <div style={{ color: 'red' }}>{errors.category_id}</div>
+                )}
+            </div>
+
             <button type="submit">Save Product</button>
+
+            {/* General error message */}
+            {errors.general && (
+                <div style={{ color: 'red', marginTop: '10px' }}>
+                    {errors.general}
+                </div>
+            )}
+
+            {/* Success message */}
+            {successMessage && (
+                <div style={{ color: 'green', marginTop: '10px' }}>
+                    {successMessage}
+                </div>
+            )}
         </form>
     );
 }
