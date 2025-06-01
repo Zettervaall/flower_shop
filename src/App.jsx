@@ -9,6 +9,7 @@ import AboutSection from './components/AboutSection';
 import CarouselSection from './components/CarouselSection';
 
 import ProductPage from './pages/ProductPage'; //product-sidan
+import CartPage from './pages/CartPage';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                 />
 
                 <Route path="/flowers" element={<ProductPage />} />
+                <Route path="/cart" element={<CartPage />} />
             </Routes>
         </Router>
     );

@@ -12,6 +12,7 @@ const ProductPage = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log('Hämtade produkter:', data);
+
                 setProducts(data);
             })
             .catch((err) => console.error('Kunde inte hämta produkter:', err));
