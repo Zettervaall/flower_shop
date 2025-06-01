@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-    db.all('SELECT * FROM products', (err, rows) => {
-        if (err) {
+    db.all('SELECT * FROM products', (error, row) => {
+        if (error) {
             console.error('Fel vid hämtning:', error.message);
             return res
                 .status(500)
@@ -26,9 +26,9 @@ app.get('/products', (req, res) => {
 
 // hämta alla kategorier
 app.get('/categories', (req, res) => {
-    db.all('SELECT * FROM categories', (err, rows) => {
-        if (err) {
-            console.error('Fel vid hämtning av kategorier:', err.message);
+    db.all('SELECT * FROM categories', (error, rows) => {
+        if (error) {
+            console.error('Fel vid hämtning av kategorier:', error.message);
             return res
                 .status(500)
                 .json({ error: 'Kunde inte hämta kategorier.' });
@@ -37,14 +37,13 @@ app.get('/categories', (req, res) => {
     });
 });
 
-
-app.get('/product/:productId', (req, res) => {
+app.get('/products/:productId', (req, res) => {
     db.get(
         'SELECT * FROM products WHERE id = ?',
         req.params.productId,
-        (err, rows) => {
-            if (err) {
-                console.error('Fel vid hämtning:', err.message);
+        (error, rows) => {
+            if (error) {
+                console.error('Fel vid hämtning:', error.message);
                 return res
                     .status(500)
                     .json({ error: 'Något gick fel med databasen.' });
@@ -54,14 +53,14 @@ app.get('/product/:productId', (req, res) => {
     );
 });
 
-app.post('/product', (req, res) => {
+app.post('/products', (req, res) => {
     const { product_name, image_url, price, color, water_needs, category_id } =
         req.body;
 
     const productStmt = db.prepare(`
-  INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
-  VALUES (?, ?, ?, ?, ?, ?)
-`);
+        INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
+        VALUES (?, ?, ?, ?, ?, ?)
+    `);
 
     productStmt.run(
         product_name,
@@ -70,36 +69,34 @@ app.post('/product', (req, res) => {
         color,
         water_needs,
         category_id,
-        (error) => {
+        function (error) {
             if (error) {
-                console.error(
-                    'Fel vid inläsning av produkt:',
-                    product[0],
-                    error.message
-                );
+                console.error('Error inserting product:', error.message);
+                return res
+                    .status(500)
+                    .json({ error: 'Failed to save the product.' });
             }
+
+            console.log('Product inserted!');
+            res.status(200).json({
+                message: 'Product saved successfully.',
+                id: this.lastID
+            });
         }
     );
-    productStmt.finalize(() => {
-        console.log('Product inserted!');
-    });
-    res.status(200).send('');
+
+    productStmt.finalize();
 });
 
-app.put('/product/:productId', (req, res) => {
+app.put('/products/:productId', (req, res) => {
     const { product_name, image_url, price, color, water_needs, category_id } =
         req.body;
 
     const productStmt = db.prepare(`
-UPDATE products
-SET product_name = ?,
-    image_url = ?,
-    price = ?,
-    color = ?,
-    water_needs = ?,
-    category_id = ?
-WHERE id = ?;
-`);
+        UPDATE products
+        SET product_name = ?, image_url = ?, price = ?, color = ?, water_needs = ?, category_id = ?
+        WHERE id = ?
+    `);
 
     productStmt.run(
         product_name,
@@ -109,25 +106,28 @@ WHERE id = ?;
         water_needs,
         category_id,
         req.params.productId,
-        (error) => {
+        function (error) {
             if (error) {
-                console.error(
-                    'Fel vid inläsning av produkt:',
-                    product[0],
-                    error.message
-                );
+                console.error('Error updating product:', error.message);
+                return res
+                    .status(500)
+                    .json({ error: 'Failed to update the product.' });
             }
+
+            if (this.changes === 0) {
+                return res.status(404).json({ error: 'Product not found.' });
+            }
+
+            console.log('Product updated!');
+            res.status(200).json({ message: 'Product updated successfully.' });
         }
     );
-    productStmt.finalize(() => {
-        console.log('Product updated!');
-    });
-    res.status(200).send('');
 
+    productStmt.finalize();
 });
 
 // startar servern
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`✅ Servern är redo på http://localhost:${PORT}`);
+    console.log(`Servern är redo på http://localhost:${PORT}`);
 });

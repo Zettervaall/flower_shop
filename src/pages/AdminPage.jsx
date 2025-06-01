@@ -32,13 +32,6 @@ function AdminPage() {
         <div className="admin-page">
             <h1>Admin Page</h1>
 
-            <button
-                className="add-new-product-button"
-                onClick={() => setSelectedProductId(null)}
-            >
-                Add New Product
-            </button>
-
             <div className="admin-content">
                 <div className="product-form-container">
                     <h2>
@@ -47,6 +40,7 @@ function AdminPage() {
                     <ProductForm
                         productId={selectedProductId}
                         onSaved={handleSaved}
+                        categories={categories}
                     />
                 </div>
             </div>
@@ -72,14 +66,14 @@ function AdminPage() {
                                 )
                                 .map((product) => (
                                     <li key={product.id}>
-                                        <button
+                                        <div
                                             className="product-name-button"
                                             onClick={() =>
                                                 setSelectedProductId(product.id)
                                             }
                                         >
                                             {product.product_name}
-                                        </button>
+                                        </div>
                                     </li>
                                 ))}
                         </ul>

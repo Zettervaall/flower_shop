@@ -5,7 +5,7 @@ db.run('DELETE FROM products');
 db.run('DELETE FROM categories');
 
 // Categories
-const categories = ['Roses', 'Succulent', 'Gift', 'Orchids'];
+const categories = ['Roses', 'Succulent', 'Gift', 'Orchids', 'Plant'];
 
 // Inserting categories
 const categoryStmt = db.prepare(
@@ -37,30 +37,16 @@ const products = [
         1
     ],
     ['Cactus', './assets/bridal-bouquet.png', 99.5, 'green', 'low', 4],
-    [
-        'Sunflower Pot',
-        'https://example.com/sunflower.jpg',
-        179.0,
-        'yellow',
-        'high',
-        3
-    ],
+
     [
         'Orchid Gift Box',
         'https://example.com/orchid.jpg',
         329.0,
         'purple',
         'medium',
-        5
+        3
     ],
-    [
-        'Peace Lily',
-        'https://example.com/gift2.jpg',
-        219.0,
-        'white',
-        'medium',
-        5
-    ],
+
     ['Areca Palm', 'https://example.com/palm.jpg', 259, 'green', 'high', 5],
     [
         'Snake Plant',
@@ -90,14 +76,13 @@ const products = [
     ],
     ['Fiddle Leaf Fig', 'https://example.com/fig.jpg', 299, 'green', 'high', 5],
 
-    // Orchids (category_id = 6)
     [
         'White Orchid',
         'https://example.com/orchid1.jpg',
         219.0,
         'white',
         'medium',
-        6
+        4
     ],
     [
         'Pink Orchid',
@@ -105,7 +90,7 @@ const products = [
         229.0,
         'pink',
         'medium',
-        6
+        4
     ],
     [
         'Blue Orchid',
@@ -113,7 +98,7 @@ const products = [
         249.0,
         'blue',
         'medium',
-        6
+        4
     ],
     [
         'Mini Orchid',
@@ -123,24 +108,6 @@ const products = [
         'medium',
         4
     ],
-    [
-        'Mini Plant Trio',
-        'https://example.com/planttrio.jpg',
-        189,
-        'green',
-        'low',
-        4
-    ],
-    [
-        'Flower & Chocolate Box',
-        'https://example.com/flowerchoco.jpg',
-        249,
-        'mixed',
-        'medium',
-        4
-    ],
-
-    // Plants (category_id = 5)
     [
         'Double Stem Orchid',
         'https://example.com/orchid5.jpg',
@@ -165,13 +132,31 @@ const products = [
         'medium',
         4
     ],
+
     [
         'Orchid Trio',
         'https://example.com/orchid8.jpg',
         349.0,
         'mixed',
         'medium',
+        4
+    ],
+
+    [
+        'Mini Plant Trio',
+        'https://example.com/planttrio.jpg',
+        189,
+        'green',
+        'low',
         5
+    ],
+    [
+        'Flower & Chocolate Box',
+        'https://example.com/flowerchoco.jpg',
+        249,
+        'mixed',
+        'medium',
+        3
     ]
 ];
 

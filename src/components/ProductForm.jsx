@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function ProductForm({ productId, onSaved }) {
+function ProductForm({ productId, onSaved, categories }) {
     const [form, setForm] = useState({
         product_name: '',
         image_url: '',
@@ -18,7 +18,7 @@ function ProductForm({ productId, onSaved }) {
 
     useEffect(() => {
         if (productId) {
-            fetch(`http://localhost:3000/product/${productId}`)
+            fetch(`http://localhost:3000/products/${productId}`)
                 .then((response) => response.json())
                 .then((data) => setForm(data))
                 .catch((error) => {
@@ -55,8 +55,8 @@ function ProductForm({ productId, onSaved }) {
 
         const httpMethod = productId ? 'PUT' : 'POST';
         const url = productId
-            ? `http://localhost:3000/product/${productId}`
-            : 'http://localhost:3000/product';
+            ? `http://localhost:3000/products/${productId}`
+            : 'http://localhost:3000/products';
 
         fetch(url, {
             method: httpMethod,
@@ -73,6 +73,14 @@ function ProductForm({ productId, onSaved }) {
             })
             .then(() => {
                 setSuccessMessage('Product saved successfully!');
+                setForm({
+                    product_name: '',
+                    image_url: '',
+                    price: '',
+                    color: '',
+                    water_needs: '',
+                    category_id: ''
+                });
                 if (onSaved) {
                     onSaved();
                 }
@@ -160,20 +168,26 @@ function ProductForm({ productId, onSaved }) {
             </div>
 
             <div>
-                <input
+                <label>Category:</label>
+                <select
                     name="category_id"
-                    type="number"
                     value={form.category_id}
                     onChange={handleChange}
-                    placeholder="Category ID"
                     required
-                />
+                >
+                    <option value="">Select category</option>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category.id}>
+                            {category.category_name}
+                        </option>
+                    ))}
+                </select>
                 {errors.category_id && (
                     <div style={{ color: 'red' }}>{errors.category_id}</div>
                 )}
             </div>
 
-            <button type="submit">Save Product</button>
+            <button type="submit">Add new product</button>
 
             {/* General error message */}
             {errors.general && (
