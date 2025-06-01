@@ -18,7 +18,7 @@ function ProductForm({ productId, onSaved, categories }) {
 
     useEffect(() => {
         if (productId) {
-            fetch(`http://localhost:3000/product/${productId}`)
+            fetch(`http://localhost:3000/products/${productId}`)
                 .then((response) => response.json())
                 .then((data) => setForm(data))
                 .catch((error) => {
@@ -55,8 +55,8 @@ function ProductForm({ productId, onSaved, categories }) {
 
         const httpMethod = productId ? 'PUT' : 'POST';
         const url = productId
-            ? `http://localhost:3000/product/${productId}`
-            : 'http://localhost:3000/product';
+            ? `http://localhost:3000/products/${productId}`
+            : 'http://localhost:3000/products';
 
         fetch(url, {
             method: httpMethod,

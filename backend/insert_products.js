@@ -5,7 +5,7 @@ db.run('DELETE FROM products');
 db.run('DELETE FROM categories');
 
 // Categories
-const categories = ['Roses', 'Succulent', 'Gift', 'Orchids, Plants'];
+const categories = ['Roses', 'Succulent', 'Gift', 'Orchids', 'Plant'];
 
 // Inserting categories
 const categoryStmt = db.prepare(
