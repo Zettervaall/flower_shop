@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/products', (req, res) => {
     db.all('SELECT * FROM products', (err, rows) => {
         if (err) {
-            console.error('Fel vid hämtning:', err.message);
+            console.error('Fel vid hämtning:', error.message);
             return res
                 .status(500)
                 .json({ error: 'Något gick fel med databasen.' });
@@ -34,6 +34,24 @@ app.get('/categories', (req, res) => {
                 .json({ error: 'Kunde inte hämta kategorier.' });
         }
         res.json(rows);
+    });
+});
+
+// ADMIN SIDA
+// Lägg till ny produkt
+app.post('/products', (req, res) => {
+    const { product_name, image_url, price, color, water_needs, category_id } = req.body;
+
+    const query = `
+        INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
+        VALUES (?, ?, ?, ?, ?, ?)
+    `;
+    db.run(query, [product_name, image_url, price, color, water_needs, category_id], function (error) {
+        if (error) {
+            console.error('Fel vid inläsning:', error.message);
+            return res.status(500).json({ error: 'Kunde inte lägga till produkt.' });
+        }
+        res.json({ success: true, id: this.lastID });
     });
 });
 
