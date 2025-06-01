@@ -37,6 +37,93 @@ app.get('/categories', (req, res) => {
     });
 });
 
+app.get('/product/:productId', (req, res) => {
+    db.get(
+        'SELECT * FROM products WHERE id = ?',
+        req.params.productId,
+        (err, rows) => {
+            if (err) {
+                console.error('Fel vid hämtning:', err.message);
+                return res
+                    .status(500)
+                    .json({ error: 'Något gick fel med databasen.' });
+            }
+            res.json(rows);
+        }
+    );
+});
+
+app.post('/product', (req, res) => {
+    const { product_name, image_url, price, color, water_needs, category_id } =
+        req.body;
+
+    const productStmt = db.prepare(`
+  INSERT INTO products (product_name, image_url, price, color, water_needs, category_id)
+  VALUES (?, ?, ?, ?, ?, ?)
+`);
+
+    productStmt.run(
+        product_name,
+        image_url,
+        price,
+        color,
+        water_needs,
+        category_id,
+        (error) => {
+            if (error) {
+                console.error(
+                    'Fel vid inläsning av produkt:',
+                    product[0],
+                    error.message
+                );
+            }
+        }
+    );
+    productStmt.finalize(() => {
+        console.log('Product inserted!');
+    });
+    res.status(200).send('');
+});
+
+app.put('/product/:productId', (req, res) => {
+    const { product_name, image_url, price, color, water_needs, category_id } =
+        req.body;
+
+    const productStmt = db.prepare(`
+UPDATE products
+SET product_name = ?,
+    image_url = ?,
+    price = ?,
+    color = ?,
+    water_needs = ?,
+    category_id = ?
+WHERE id = ?;
+`);
+
+    productStmt.run(
+        product_name,
+        image_url,
+        price,
+        color,
+        water_needs,
+        category_id,
+        req.params.productId,
+        (error) => {
+            if (error) {
+                console.error(
+                    'Fel vid inläsning av produkt:',
+                    product[0],
+                    error.message
+                );
+            }
+        }
+    );
+    productStmt.finalize(() => {
+        console.log('Product updated!');
+    });
+    res.status(200).send('');
+});
+
 // startar servern
 const PORT = 3000;
 app.listen(PORT, () => {
