@@ -17,7 +17,10 @@ const Navbar = () => {
                     <div className="nav-icons">
                         <FaUser />
                         <FaSearch />
-                        <FaShoppingCart />
+
+                        <Link to="/cart">
+                            <FaShoppingCart />
+                        </Link>
                     </div>
                 </div>
             </nav>

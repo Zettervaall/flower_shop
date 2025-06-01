@@ -28,25 +28,32 @@ categoryStmt.finalize(() => {
 
 // Products data
 const products = [
-    [
-        'Rose Bouquet',
-        'https://example.com/rose.jpg',
-        249.99,
-        'red',
-        'medium',
-        1
-    ],
+    ['Rose Bouquet', './assets/bridal-bouquet.png', 249.99, 'red', 'medium', 1],
     ['Cactus', './assets/bridal-bouquet.png', 99.5, 'green', 'low', 4],
-
+    [
+        'Sunflower Pot',
+        'https://example.com/sunflower.jpg',
+        179.0,
+        'yellow',
+        'high',
+        3
+    ],
     [
         'Orchid Gift Box',
-        'https://example.com/orchid.jpg',
+        './assets/bridal-bouquet.png',
         329.0,
         'purple',
         'medium',
-        3
+        5
     ],
-
+    [
+        'Peace Lily',
+        'https://example.com/gift2.jpg',
+        219.0,
+        'white',
+        'medium',
+        5
+    ],
     ['Areca Palm', 'https://example.com/palm.jpg', 259, 'green', 'high', 5],
     [
         'Snake Plant',
@@ -59,26 +66,19 @@ const products = [
 
     [
         'Flower Pot Set',
-        'https://example.com/gift8.jpg',
+        './assets/bridal-bouquet.png',
         150.0,
         'various',
         'medium',
         5
     ],
-    ['ZZ Plant', 'https://example.com/zzplant.jpg', 149, 'green', 'low', 5],
-    [
-        'Rubber Plant',
-        'https://example.com/rubberplant.jpg',
-        189,
-        'green',
-        'medium',
-        5
-    ],
-    ['Fiddle Leaf Fig', 'https://example.com/fig.jpg', 299, 'green', 'high', 5],
+    ['ZZ Plant', './assets/bridal-bouquet.png', 149, 'green', 'low', 5],
+    ['Rubber Plant', './assets/bridal-bouquet.png', 189, 'green', 'medium', 5],
+    ['Fiddle Leaf Fig', './assets/bridal-bouquet.png', 299, 'green', 'high', 5],
 
     [
         'White Orchid',
-        'https://example.com/orchid1.jpg',
+        './assets/bridal-bouquet.png',
         219.0,
         'white',
         'medium',
@@ -90,7 +90,7 @@ const products = [
         229.0,
         'pink',
         'medium',
-        4
+        6
     ],
     [
         'Blue Orchid',
@@ -98,57 +98,23 @@ const products = [
         249.0,
         'blue',
         'medium',
-        4
+        6
     ],
     [
         'Mini Orchid',
-        'https://example.com/orchid4.jpg',
+        './assets/bridal-bouquet.png',
         199.0,
         'purple',
         'medium',
         4
     ],
     [
-        'Double Stem Orchid',
-        'https://example.com/orchid5.jpg',
-        269.0,
-        'white',
-        'medium',
-        4
-    ],
-    [
-        'Orchid Basket',
-        'https://example.com/orchid6.jpg',
-        299.0,
-        'mixed',
-        'medium',
-        4
-    ],
-    [
-        'Golden Orchid',
-        'https://example.com/orchid7.jpg',
-        289.0,
-        'gold',
-        'medium',
-        4
-    ],
-
-    [
-        'Orchid Trio',
-        'https://example.com/orchid8.jpg',
-        349.0,
-        'mixed',
-        'medium',
-        4
-    ],
-
-    [
         'Mini Plant Trio',
         'https://example.com/planttrio.jpg',
         189,
         'green',
         'low',
-        5
+        4
     ],
     [
         'Flower & Chocolate Box',
@@ -156,7 +122,41 @@ const products = [
         249,
         'mixed',
         'medium',
-        3
+        4
+    ],
+
+    // Plants (category_id = 5)
+    [
+        'Double Stem Orchid',
+        './assets/bridal-bouquet.png',
+        269.0,
+        'white',
+        'medium',
+        4
+    ],
+    [
+        'Orchid Basket',
+        './assets/bridal-bouquet.png',
+        299.0,
+        'mixed',
+        'medium',
+        4
+    ],
+    [
+        'Golden Orchid',
+        './assets/bridal-bouquet.png',
+        289.0,
+        'gold',
+        'medium',
+        4
+    ],
+    [
+        'Orchid Trio',
+        'https://example.com/orchid8.jpg',
+        349.0,
+        'mixed',
+        'medium',
+        5
     ]
 ];
 
