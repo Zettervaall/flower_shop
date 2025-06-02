@@ -1,4 +1,5 @@
 import './ProductCards.css';
+import { Link } from 'react-router-dom';
 
 const click = ({ product }) => {
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -9,7 +10,7 @@ const click = ({ product }) => {
 const ProductCards = ({ product }) => {
     return (
         <div className="cards-container">
-            <div className="product-card">
+            <Link to={`/info/${product.id}`} className="product-card">
                 <img
                     src={product.image_url}
                     alt={product.product_name}
@@ -18,10 +19,9 @@ const ProductCards = ({ product }) => {
                 <div className="cards-text">
                     <h3>{product.product_name}</h3>
                     <p>{product.price} kr</p>
-                    <button onClick={() => click({ product })}>Klicka</button>
-
                 </div>
-            </div>
+            </Link>
+            <button onClick={() => click({ product })}>Add to cart</button>
         </div>
     );
 };
