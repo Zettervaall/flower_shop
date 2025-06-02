@@ -18,10 +18,19 @@ const ProductCards = ({ product }) => {
                 />
                 <div className="cards-text">
                     <h3>{product.product_name}</h3>
-                    <p>{product.price} kr</p>
+                    <div className="price-and-button">
+                        <p>{product.price} kr</p>
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault(); // hindrar att inte länken triggas av knappen
+                                click({ product });
+                            }}
+                        >
+                            Add to cart
+                        </button>
+                    </div>
                 </div>
             </Link>
-            <button onClick={() => click({ product })}>Add to cart</button>
         </div>
     );
 };

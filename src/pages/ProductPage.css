@@ -5,3 +5,59 @@
     justify-content: center;
     gap: 2rem;
 }
+
+.product-page h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Aboreto;
+    margin-top: 5rem;
+}
+
+.products-text p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Aboreto;
+    margin: 2rem 10rem 3rem 10rem;
+}
+
+.divider-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.divider-with-text::before,
+.divider-with-text::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #494949;
+}
+
+.divider-with-text::before {
+    margin-right: 1rem;
+}
+
+.divider-with-text::after {
+    margin-left: 1rem;
+}
+
+.divider-with-text span {
+    font-family: Aboreto;
+    font-size: 1.2rem;
+    color: #494949;
+}
+
+.load-more {
+    display: block;
+    margin: 5rem auto;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    background-color: #bf2f4d;
+    color: white;
+    font-family: Aboreto;
+}
