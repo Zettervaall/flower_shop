@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #fff9ef;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.admin-page h1,
+.admin-page h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #bf2f4d;
+    font-family: 'Aboreto';
+}
+
+.product-form-container {
+    width: 100%;
+    max-width: 45rem;
+    padding: 30px;
+    background-color: transparent;
+}
+
+.product-form-container form > div {
+    margin-bottom: 15px;
+}
+
+.product-form-container input,
+.product-form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 1px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.product-form-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #97ad85;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Aboreto';
+}
+
+.product-form-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #525252;
+    font-family: 'Aboreto';
+}
+
+/* For water needs checkboxes*/
+.water-needs-label {
+    font-family: 'Aboreto';
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: start;
+}
+.product-form-container .radio-options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.category-id {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 1px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.product-form-container label[for='category_id'],
+.product-form-container select[name='category_id'] {
+    margin-bottom: 1rem;
+    font-family: 'Aboreto', cursive;
+    font-weight: 600;
+    color: #525252;
+    display: block;
+    margin-bottom: 6px;
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+    box-sizing: border-box;
+}

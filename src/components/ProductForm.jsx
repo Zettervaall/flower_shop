@@ -148,20 +148,21 @@ function ProductForm({ productId, onSaved, categories }) {
             </div>
 
             <div>
-                <label>Water Needs:</label>
-                <br />
-                {['low', 'medium', 'high'].map((level) => (
-                    <label key={level} style={{ marginRight: '10px' }}>
-                        <input
-                            type="radio"
-                            name="water_needs"
-                            value={level}
-                            checked={form.water_needs === level}
-                            onChange={handleChange}
-                        />
-                        {level}
-                    </label>
-                ))}
+                <label className='water-needs-label'>Water Needs:</label>
+                <div className="radio-options">
+                    {['low', 'medium', 'high'].map((level) => (
+                        <label key={level} className="radio-label">
+                            <input
+                                type="radio"
+                                name="water_needs"
+                                value={level}
+                                checked={form.water_needs === level}
+                                onChange={handleChange}
+                            />
+                            <span>{level}</span>
+                        </label>
+                    ))}
+                </div>
                 {errors.water_needs && (
                     <div style={{ color: 'red' }}>{errors.water_needs}</div>
                 )}
