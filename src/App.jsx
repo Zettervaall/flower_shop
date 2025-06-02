@@ -7,6 +7,7 @@ import FirstSection from './components/FirstSection';
 import ThirdSection from './components/ThirdSection';
 import AboutSection from './components/AboutSection';
 import CarouselSection from './components/CarouselSection';
+import Footer from './components/Footer';
 
 import ProductPage from './pages/ProductPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -27,6 +28,7 @@ function App() {
                             <ThirdSection />
                             <AboutSection />
                             <CarouselSection />
+                            <Footer />
                         </>
                     }
                 />

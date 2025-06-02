@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './CartPage.css';
+import Footer from '../components/Footer';
 
 const CartPage = () => {
     const [product, setProduct] = useState([]);
@@ -44,79 +45,82 @@ const CartPage = () => {
     }
 
     return (
-        <div className="cart-page-container">
-            <div className="checkout-form">
-                <h2>Checkout</h2>
-                <label>
-                    Name:
-                    <input
-                        type="text"
-                        name="name"
-                        value={checkoutInfo.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
+        <>
+            <div className="cart-page-container">
+                <div className="checkout-form">
+                    <h2>Checkout</h2>
+                    <label>
+                        Name:
+                        <input
+                            type="text"
+                            name="name"
+                            value={checkoutInfo.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
 
-                <label>
-                    Shipping Address:
-                    <input
-                        type="text"
-                        name="shippingAddress"
-                        value={checkoutInfo.shippingAddress}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
+                    <label>
+                        Shipping Address:
+                        <input
+                            type="text"
+                            name="shippingAddress"
+                            value={checkoutInfo.shippingAddress}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
 
-                <label>
-                    Postal Code:
-                    <input
-                        type="text"
-                        name="postalCode"
-                        value={checkoutInfo.postalCode}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
+                    <label>
+                        Postal Code:
+                        <input
+                            type="text"
+                            name="postalCode"
+                            value={checkoutInfo.postalCode}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
 
-                <label>
-                    Payment Method:
-                    <select
-                        name="paymentMethod"
-                        value={checkoutInfo.paymentMethod}
-                        onChange={handleChange}
-                    >
-                        <option value="credit_card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="swish">Swish</option>
-                    </select>
-                </label>
+                    <label>
+                        Payment Method:
+                        <select
+                            name="paymentMethod"
+                            value={checkoutInfo.paymentMethod}
+                            onChange={handleChange}
+                        >
+                            <option value="credit_card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="swish">Swish</option>
+                        </select>
+                    </label>
 
-                <button className="pay-now-btn">Pay Now</button>
-            </div>
+                    <button className="pay-now-btn">Pay Now</button>
+                </div>
 
-            <div className="cart-summary">
-                <h2>Your Products</h2>
-                {product.length === 0 ? (
-                    <p>Your cart is empty.</p>
-                ) : (
-                    product.map((product) => (
-                        <div key={product.id} className="cart-item">
-                            <div className="item-info">
-                                <img
-                                    src={product.image_url}
-                                    alt={product.product_name}
-                                />
-                                <h3>{product.product_name}</h3>
+                <div className="cart-summary">
+                    <h2>Your Products</h2>
+                    {product.length === 0 ? (
+                        <p>Your cart is empty.</p>
+                    ) : (
+                        product.map((product) => (
+                            <div key={product.id} className="cart-item">
+                                <div className="item-info">
+                                    <img
+                                        src={product.image_url}
+                                        alt={product.product_name}
+                                    />
+                                    <h3>{product.product_name}</h3>
+                                </div>
+                                <p>{product.price} kr</p>
                             </div>
-                            <p>{product.price} kr</p>
-                        </div>
-                    ))
-                )}
-                <h3>Total: {amount} kr</h3>
+                        ))
+                    )}
+                    <h3>Total: {amount} kr</h3>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 
