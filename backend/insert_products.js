@@ -9,7 +9,7 @@ const categories = ['Roses', 'Succulent', 'Gift', 'Orchids', 'Plant'];
 
 // Inserting categories
 const categoryStmt = db.prepare(
-    `INSERT INTO categories (category_name) VALUES (?)`
+    `INSERT OR IGNORE INTO categories (category_name) VALUES (?)`
 );
 categories.forEach((category) => {
     categoryStmt.run([category], (error) => {
