@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-    db.all('SELECT * FROM products', (error, row) => {
+    db.all('SELECT * FROM products', (error, rows) => {
         if (error) {
             console.error('Fel vid hämtning:', error.message);
             return res
