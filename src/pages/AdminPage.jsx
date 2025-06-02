@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from '../components/ProductForm';
-import '../components/AdminPage.css';
+import './AdminPage.css';
 
 function AdminPage() {
     const [products, setProducts] = useState([]);
