@@ -4,7 +4,7 @@ import './CarouselSection.css';
 import imgBouquet from '../assets/MD-2024_9.jpg';
 // import imgSummer from '../assets/25-wedding-flowers.jpg';
 
-const images = [imgSummer, imgBouquet];
+const images = [imgBouquet];
 
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);

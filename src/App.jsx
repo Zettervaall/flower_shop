@@ -25,9 +25,9 @@ function App() {
                     path="/"
                     element={
                         <>
+                            <AboutSection />
                             <FirstSection />
                             <ThirdSection />
-                            <AboutSection />
                             <CarouselSection />
                             <Footer />
                         </>
