@@ -23,8 +23,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
-    color: #ffffff;
+    background: none;
+    color: #000000be;
     border: none;
     font-size: 2.5rem;
     cursor: pointer;

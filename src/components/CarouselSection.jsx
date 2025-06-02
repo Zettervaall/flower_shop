@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './CarouselSection.css';
 
-import imgSummer from '../assets/23-summer-23.jpg';
-import imgBouquet from '../assets/Beauty of flowers2-min.jpg';
+import imgBouquet from '../assets/MD-2024_9.jpg';
+import imgSummer from '../assets/25-wedding-flowers.jpg';
 
 const images = [imgSummer, imgBouquet];
 
