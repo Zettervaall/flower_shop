@@ -37,7 +37,7 @@
 }
 
 .nav-links a {
-    color: #bf2f4d;
+    color: #000000be;
     text-decoration: none;
     text-underline-offset: 6px;
     font-family: 'Aboreto', cursive;
@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 2rem;
-    color: #bf2f4d;
+    color: #000000be;
     font-size: 3rem;
     background-color: none;
 }
@@ -64,7 +64,7 @@
     cursor: pointer;
     font-size: 1.3rem;
     margin-left: 1.5rem;
-    color: #bf2f4d;
+    color: #000000be;
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
