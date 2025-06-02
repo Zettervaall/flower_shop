@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import FirstSection from './components/FirstSection';
-
+import SecondSection from './components/SecondSection';
 import ThirdSection from './components/ThirdSection';
 import AboutSection from './components/AboutSection';
 import CarouselSection from './components/CarouselSection';
@@ -27,6 +27,7 @@ function App() {
                         <>
                             <AboutSection />
                             <FirstSection />
+                            <SecondSection />
                             <ThirdSection />
                             <CarouselSection />
                             <Footer />

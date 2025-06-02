@@ -6,6 +6,23 @@
     width: 100%;
 }
 
+.third-section-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container-scale {
+    transform: scale(
+        0.85
+    ); /* Adjusting scale of the design without changing it */
+    transform-origin: top center;
+}
+
 body {
     margin: 0;
     font-family: 'Georgia', serif;
@@ -48,7 +65,7 @@ body {
 }
 
 .text-bg1 {
-    color: #bf2f4d;
+    color: #333;
     font-size: 1.2rem;
     font-family: Aboreto;
     font-weight: bolder;
@@ -56,7 +73,7 @@ body {
 
 .textbox2,
 .textbox3 {
-    color: #ffe5e1;
+    color: #333;
     font-size: 1.2rem;
     font-family: Aboreto;
     font-weight: bolder;
@@ -67,21 +84,18 @@ body {
 }
 
 .pink-lower {
-    background-color: #bf2f4d;
+    background-color: #edc7d5;
     border-bottom-right-radius: 3rem;
 }
 
-.dark-pink {
-    background-color: #b83252;
-}
-
 .bg1 {
-    background-color: #f6c4c4;
+    background-color: #f3e0d9;
+    /* #fade9d9e; */
     margin-top: 5rem;
 }
 
 .bg2 {
-    background-color: #bf2f4d;
+    background-color: #edc7d5; /* #a6ba96; */
     border-top-left-radius: 4rem;
 }
 
@@ -112,4 +126,49 @@ body {
     align-self: start;
     max-height: 320px;
     overflow: hidden;
+}
+
+/* Text part and container*/
+.third-section-flex-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    align-items: flex-start;
+}
+
+.tips-text {
+    flex: 1;
+    color: #333;
+    font-family: 'Aboreto';
+    margin-top: 3rem !important;
+}
+
+.tips-text h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #9d845f;
+}
+
+.tips-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 300px;
+}
+
+.tips-btn {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #f9a7c5c6;
+    color: #333;
+    font-family: 'Aboreto';
+    font-size: 1rem;
+}
+
+.container-scale {
+    flex: 3;
 }

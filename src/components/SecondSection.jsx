@@ -12,15 +12,22 @@ const cat = [
 
 const SecondSection = () => {
     return (
-        <div className="categories-container">
-            {cat.map((cat) => (
-                <Link key={cat.name} to={cat.path} className="category-link">
-                    <div className="category-circle">
-                        <img src={cat.img} alt={cat.name} />
-                    </div>
-                    <div className="category-label">{cat.name}</div>
-                </Link>
-            ))}
+        <div className="categories-wrapper">
+            <h1 className="categories-title">Our categories</h1>
+            <div className="categories-container">
+                {cat.map((cat) => (
+                    <Link
+                        key={cat.name}
+                        to={cat.path}
+                        className="category-link"
+                    >
+                        <div className="category-circle">
+                            <img src={cat.img} alt={cat.name} />
+                        </div>
+                        <div className="category-label">{cat.name}</div>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };

@@ -34,14 +34,14 @@
 }
 
 .bouquet-heading {
-    font-family: 'Tangerine';
-    font-size: 4.5rem;
+    font-family: 'Aboreto';
+    font-size: 2.5rem;
     margin-bottom: 0.2rem;
     position: relative;
 }
 
 .bouquet-description {
-    background-color: #9a815858;
+    background-color: #f2e0b5ce; /* ROSA #edc7d5bf // #9a815858 eller #97ad8583 */
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-right: 4rem;
@@ -54,4 +54,10 @@
     border-radius: 40px 0 40px 0;
     width: 600px;
     margin-right: -3rem;
+}
+
+.bouquet-button {
+    margin-top: 1rem;
+    background-color: #fff9f5;
+    font-size: 1rem;
 }

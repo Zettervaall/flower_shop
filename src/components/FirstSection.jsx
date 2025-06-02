@@ -27,6 +27,9 @@ const BouquetSection = () => {
                         arrangements perfect for every occasion. Brighten your
                         day or surprise someone special!
                     </p>
+                    <button className="bouquet-button">
+                        Discover our bouquets now
+                    </button>
                 </div>
             </div>
         </div>
