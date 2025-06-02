@@ -29,7 +29,6 @@ function App() {
                             <FirstSection />
                             <SecondSection />
                             <ThirdSection />
-                            <CarouselSection />
                             <Footer />
                         </>
                     }

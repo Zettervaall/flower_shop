@@ -8,14 +8,12 @@
 
 .third-section-flex-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 2rem;
+    align-items: center;
 }
-
 .container-scale {
     transform: scale(
         0.85
@@ -136,13 +134,15 @@ body {
     margin: 0 auto;
     padding: 2rem 2rem;
     align-items: flex-start;
+    padding-left: 4rem;
 }
 
 .tips-text {
     flex: 1;
     color: #333;
     font-family: 'Aboreto';
-    margin-top: 3rem !important;
+    padding-top: 11rem !important; /* remove this */
+    /* optionally add balanced padding */
 }
 
 .tips-text h1 {
@@ -159,8 +159,8 @@ body {
 }
 
 .tips-btn {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 5.8rem;
+    padding-right: 5.8rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: #f9a7c5c6;
