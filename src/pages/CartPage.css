@@ -90,7 +90,7 @@
 .item-info {
     display: flex;
     align-items: center;
-    gap: 12px; /* space between image and name */
+    gap: 12px;
     flex: 1;
 }
 

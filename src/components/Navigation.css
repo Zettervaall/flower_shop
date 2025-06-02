@@ -10,15 +10,15 @@
 .navbar {
     width: 100%;
     height: 4rem;
-    background-color: #bf2f4d;
+    background-color: #f3eae0;
     color: white;
     padding: 0 2.5rem;
     display: flex;
     align-items: center;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
     font-family: 'Aboreto', cursive;
     z-index: 20;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar-content {
@@ -37,7 +37,7 @@
 }
 
 .nav-links a {
-    color: white;
+    color: #bf2f4d;
     text-decoration: none;
     text-underline-offset: 6px;
     font-family: 'Aboreto', cursive;
@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 2rem;
-    color: rgba(255, 255, 255, 0.844);
+    color: #bf2f4d;
     font-size: 3rem;
     background-color: none;
 }
@@ -64,6 +64,12 @@
     cursor: pointer;
     font-size: 1.3rem;
     margin-left: 1.5rem;
+    color: #bf2f4d;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
 }
 
 /* LINE */
