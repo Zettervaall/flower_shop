@@ -6,9 +6,9 @@
     padding: 40px 20px;
     max-width: 900px;
     margin: 0 auto;
-    box-sizing: border-box;
     background-color: #fff9ef;
     font-family: 'Aboreto', cursive, Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 .checkout-form {
@@ -16,13 +16,14 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: rgba(255, 255, 255, 0.959);
+    background: rgba(255, 255, 255, 0.96);
     padding: 20px 25px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.checkout-form h2 {
+.checkout-form h2,
+.cart-summary h2 {
     margin-bottom: 1rem;
     color: #bf2f4d;
 }
@@ -42,7 +43,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    font-family: 'Aboreto', cursive, Arial, sans-serif;
+    font-family: 'Aboreto';
 }
 
 .pay-now-btn {
@@ -55,7 +56,7 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Aboreto', cursive, Arial, sans-serif;
+    font-family: 'Aboreto';
 }
 
 .pay-now-btn:hover {
@@ -64,18 +65,13 @@
 
 .cart-summary {
     flex: 1 1 450px;
-    background: white;
+    background: rgba(255, 255, 255, 0.96);
     padding: 20px 25px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.cart-summary h2 {
-    margin-bottom: 1rem;
-    color: #bf2f4d;
 }
 
 .cart-item {
@@ -90,23 +86,24 @@
 .item-info {
     display: flex;
     align-items: center;
-    gap: 12px; /* space between image and name */
+    gap: 2rem;
     flex: 1;
 }
 
 .cart-item img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.1rem !important;
     color: #525252;
     white-space: nowrap;
+    align-items: center;
 }
 
 .cart-item p {
@@ -116,8 +113,8 @@
 }
 
 .cart-summary h3 {
-    margin-top: 10px;
+    margin-top: 2px;
     text-align: right;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #525252;
 }
