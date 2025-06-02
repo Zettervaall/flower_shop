@@ -103,11 +103,13 @@ const CartPage = () => {
                 ) : (
                     product.map((product) => (
                         <div key={product.id} className="cart-item">
-                            <img
-                                src={product.image_url}
-                                alt={product.product_name}
-                            />
-                            <h3>{product.product_name}</h3>
+                            <div className="item-info">
+                                <img
+                                    src={product.image_url}
+                                    alt={product.product_name}
+                                />
+                                <h3>{product.product_name}</h3>
+                            </div>
                             <p>{product.price} kr</p>
                         </div>
                     ))

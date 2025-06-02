@@ -1,15 +1,97 @@
-.cart-title {
-    font-family: 'Aboreto';
-    text-align: center;
-    padding-top: 5rem;
+.cart-page-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #fff9ef;
+    font-family: 'Aboreto', cursive, Arial, sans-serif;
+}
+
+.checkout-form {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.959);
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form h2 {
+    margin-bottom: 1rem;
     color: #bf2f4d;
 }
+
+.checkout-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #525252;
+    font-size: 0.95rem;
+}
+
+.checkout-form input,
+.checkout-form select {
+    margin-top: 6px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Aboreto', cursive, Arial, sans-serif;
+}
+
+.pay-now-btn {
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #97ad85;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Aboreto', cursive, Arial, sans-serif;
+}
+
+.pay-now-btn:hover {
+    background-color: #7f996a;
+}
+
+.cart-summary {
+    flex: 1 1 450px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-summary h2 {
+    margin-bottom: 1rem;
+    color: #bf2f4d;
+}
+
 .cart-item {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 12px;
+    gap: 16px;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between image and name */
+    flex: 1;
 }
 
 .cart-item img {
@@ -22,12 +104,20 @@
 
 .cart-item h3 {
     margin: 0;
-    font-size: 1.1rem;
-    color: #bf2f4d;
+    font-size: 1rem;
+    color: #525252;
+    white-space: nowrap;
 }
 
 .cart-item p {
+    font-weight: 600;
+    color: #525252;
     margin: 0;
-    font-weight: bold;
+}
+
+.cart-summary h3 {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 1.3rem;
     color: #525252;
 }
