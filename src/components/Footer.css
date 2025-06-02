@@ -17,8 +17,10 @@
 
 .footer-column h4 {
     font-size: 1rem;
-    color: #bf2f4d;
+    color: #000000ab;
     margin-bottom: 12px;
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
 }
 
 .footer-column ul {
