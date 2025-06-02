@@ -1,40 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-
-.about-section-wrapper {
-    background-color: #fff9ef;
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
 }
 
-.logo-aboutsection {
-    background-color: #fff9ef;
-    color: #2f6b3a;
-    padding: 2rem;
-    border-radius: 12px;
+.about-page h1 {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    font-family: 'Georgia', serif;
-}
-
-.rose-aboutsection {
     font-family: 'Aboreto';
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #7ba96f;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: #9d845f;
 }
 
-.rue-aboutsection {
-    font-family: 'Tangerine';
-    font-size: 3rem;
-    color: #7ba96f;
-    margin-left: 3rem;
-}
-
-.about-description {
-    position: relative;
-    background-color: #fff9ef;
+.about-text p {
+    font-family: 'Aboreto';
     text-align: center;
-    color: #7ba96f;
-    font-size: 1.1rem;
+    margin: 2rem 10rem;
+    max-width: 50rem;
     line-height: 1.6;
-    font-family: 'Aboreto';
-    margin: 0rem auto;
-    max-width: 42rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Divider without text */
+.divider-without-text {
+    width: 80%;
+    height: 1px;
+    background-color: #494949;
+    margin: 2rem auto;
 }
