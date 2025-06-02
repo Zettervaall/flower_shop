@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from '../components/ProductForm';
+import '../components/AdminPage.css';
 
 function AdminPage() {
     const [products, setProducts] = useState([]);
@@ -43,42 +44,6 @@ function AdminPage() {
                         categories={categories}
                     />
                 </div>
-            </div>
-
-            <div className="product-list">
-                <h2>Products by Category</h2>
-                {categories.length === 0 && <p>Loading categories...</p>}
-                {categories.map((category) => (
-                    <div key={category.id} className="category-group">
-                        <h3>{category.category_name}</h3>
-                        <ul className="product-items">
-                            {products.filter(
-                                (p) => p.category_id === category.id
-                            ).length === 0 && (
-                                <li>
-                                    <i>No products in this category</i>
-                                </li>
-                            )}
-                            {products
-                                .filter(
-                                    (product) =>
-                                        product.category_id === category.id
-                                )
-                                .map((product) => (
-                                    <li key={product.id}>
-                                        <div
-                                            className="product-name-button"
-                                            onClick={() =>
-                                                setSelectedProductId(product.id)
-                                            }
-                                        >
-                                            {product.product_name}
-                                        </div>
-                                    </li>
-                                ))}
-                        </ul>
-                    </div>
-                ))}
             </div>
         </div>
     );
