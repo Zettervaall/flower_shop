@@ -8,7 +8,8 @@ import ThirdSection from './components/ThirdSection';
 import AboutSection from './components/AboutSection';
 import CarouselSection from './components/CarouselSection';
 
-import ProductPage from './pages/ProductPage'; //product-sidan
+import ProductPage from './pages/ProductPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import AdminPage from './pages/AdminPage';
 
@@ -31,6 +32,10 @@ function App() {
                 />
 
                 <Route path="/flowers" element={<ProductPage />} />
+                <Route
+                    path="/info/:productId"
+                    element={<ProductDetailPage />}
+                />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/admin" element={<AdminPage />} />
             </Routes>
