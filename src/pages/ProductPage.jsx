@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProductCards from '../components/ProductCards';
+import Footer from '../components/Footer';
 import './ProductPage.css';
 
 const ProductPage = () => {
@@ -19,35 +20,38 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div className="product-page">
-            <h1>Flowers</h1>
-            <div className="products-text">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro vitae illo, tenetur consequatur molestiae tempore
-                    possimus enim laudantium, assumenda neque perferendis
-                    similique alias quas reprehenderit repellat qui at quis
-                    corporis.
-                    <br />
+        <>
+            <div className="product-page">
+                <h1>Flowers</h1>
+                <div className="products-text">
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Porro vitae illo, tenetur consequatur molestiae
                         tempore possimus enim laudantium, assumenda neque
                         perferendis similique alias quas reprehenderit repellat
                         qui at quis corporis.
+                        <br />
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Porro vitae illo, tenetur consequatur
+                            molestiae tempore possimus enim laudantium,
+                            assumenda neque perferendis similique alias quas
+                            reprehenderit repellat qui at quis corporis.
+                        </p>
                     </p>
-                </p>
+                </div>
+                <div className="divider-with-text">
+                    <h2>All products</h2>
+                </div>
+                <div className="product-grid">
+                    {products.map((product) => (
+                        <ProductCards key={product.id} product={product} />
+                    ))}
+                </div>
+                <button className="load-more"> Load more...</button>
             </div>
-            <div className="divider-with-text">
-                <h2>All products</h2>
-            </div>
-            <div className="product-grid">
-                {products.map((product) => (
-                    <ProductCards key={product.id} product={product} />
-                ))}
-            </div>
-            <button className="load-more"> Load more...</button>
-        </div>
+            <Footer />
+        </>
     );
 };
 

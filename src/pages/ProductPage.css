@@ -12,7 +12,11 @@
     justify-content: center;
     text-align: center;
     font-family: Aboreto;
-    margin-top: 5rem;
+    margin-top: 4rem;
+}
+
+.product-page h2 {
+    font-family: 'Aboreto';
 }
 
 .products-text p {
@@ -21,7 +25,7 @@
     justify-content: center;
     text-align: center;
     font-family: Aboreto;
-    margin: 2rem 10rem 3rem 10rem;
+    margin: 2rem 10rem 2rem 10rem;
 }
 
 .divider-with-text {
@@ -57,7 +61,8 @@
     margin: 5rem auto;
     width: fit-content;
     padding: 0.5rem 1rem;
-    background-color: #bf2f4d;
-    color: white;
-    font-family: Aboreto;
+    background-color: #a7b998d5;
+    color: rgb(32, 31, 31);
+    font-family: 'Aboreto';
+    font-size: 1rem;
 }

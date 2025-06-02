@@ -12,12 +12,21 @@
     box-sizing: border-box;
 }
 
-.admin-page h1,
+.admin-page h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #9d845f;
+    font-family: 'Aboreto';
+    text-decoration: 1px underline;
+    text-underline-offset: 10px;
+}
+
 .admin-page h2 {
     margin: 0 0 20px 0;
     text-align: center;
-    color: #bf2f4d;
+    color: #9d845f;
     font-family: 'Aboreto';
+    font-size: 1.5rem;
 }
 
 .product-form-container {

@@ -86,7 +86,7 @@
 .item-info {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 12px;
     flex: 1;
 }
 

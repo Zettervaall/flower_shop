@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +7,11 @@ function Header() {
         <>
             <header className="header">
                 <div className="navbar_logo">
-                    <Link to="/">
+                    <Link
+                        to="/"
+                        className="navbar_logo_link"
+                        aria-label="Go to homepage"
+                    >
                         <p>
                             R<span className="R">R</span>
                         </p>
@@ -30,16 +35,12 @@ function Header() {
                     </p>
                     <div className="color_block"></div>
                 </div>
-                <Link to="/">
-                    <div className="header_content">
-                        {/* <div className="img_poeny">
-                        <img
-                            src="src\assets\1748529422710zt4r3ky6.webp"
-                            alt=""
-                        />
-                    </div> */}
-                    </div>
-                </Link>
+                <div className="header_content">
+                    <Link to="/">
+                        <div className="image-header"></div>
+                    </Link>
+                </div>
+
                 <div className="logo">
                     <h1>
                         <span className="rose">ROSE</span>

@@ -17,8 +17,10 @@
 
 .footer-column h4 {
     font-size: 1rem;
-    color: #bf2f4d;
+    color: #000000ab;
     margin-bottom: 12px;
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
 }
 
 .footer-column ul {
@@ -36,8 +38,4 @@
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-    color: #bf2f4d;
 }
