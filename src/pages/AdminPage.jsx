@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductForm from '../components/ProductForm';
 import './AdminPage.css';
+import Footer from '../components/Footer';
 
 function AdminPage() {
     const [products, setProducts] = useState([]);
@@ -30,22 +31,27 @@ function AdminPage() {
     }
 
     return (
-        <div className="admin-page">
-            <h1>Admin Page</h1>
+        <>
+            <div className="admin-page">
+                <h1>Admin Page</h1>
 
-            <div className="admin-content">
-                <div className="product-form-container">
-                    <h2>
-                        {selectedProductId ? 'Edit Product' : 'Add New Product'}
-                    </h2>
-                    <ProductForm
-                        productId={selectedProductId}
-                        onSaved={handleSaved}
-                        categories={categories}
-                    />
+                <div className="admin-content">
+                    <div className="product-form-container">
+                        <h2>
+                            {selectedProductId
+                                ? 'Edit Product'
+                                : 'Add New Product'}
+                        </h2>
+                        <ProductForm
+                            productId={selectedProductId}
+                            onSaved={handleSaved}
+                            categories={categories}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }
 
