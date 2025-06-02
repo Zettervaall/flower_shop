@@ -13,7 +13,7 @@ const CartPage = () => {
 
         Promise.all(
             cartItems.map((productId) =>
-                fetch(`http://localhost:3000/product/${productId}`)
+                fetch(`http://localhost:3000/products/${productId}`)
                     .then((res) => res.json())
                     .then((data) => {
                         productArray.push(data);
