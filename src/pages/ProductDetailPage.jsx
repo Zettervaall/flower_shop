@@ -30,12 +30,10 @@ const ProductDetailPage = () => {
                 </div>
                 <div className="product-info">
                     <h1>{product.product_name}</h1>
-                    <p>Pris: {product.price} kr</p>
-                    <p>Färg: {product.color}</p>
-                    <p>Vattenbehov: {product.water_needs}</p>
-                    <button className="add-to-cart-btn">
-                        Lägg till i kundvagn
-                    </button>
+                    <p>Price: {product.price} kr</p>
+                    <p>Color: {product.color}</p>
+                    <p>Water needs: {product.water_needs}</p>
+                    <button className="add-to-cart-btn">Add to cart</button>
                 </div>
             </div>
         </div>
