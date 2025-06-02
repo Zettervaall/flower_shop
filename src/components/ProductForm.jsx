@@ -150,7 +150,7 @@ function ProductForm({ productId, onSaved, categories }) {
             <div>
                 <label>Water Needs:</label>
                 <br />
-                {['Low', 'Medium', 'High'].map((level) => (
+                {['low', 'medium', 'high'].map((level) => (
                     <label key={level} style={{ marginRight: '10px' }}>
                         <input
                             type="radio"
