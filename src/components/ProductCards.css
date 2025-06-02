@@ -1,5 +1,5 @@
 .product-card {
-    background-color: #fefefe;
+    background-color: #f3eae06d;
     border: 1px solid #ddd;
     border-radius: 10px;
     width: 20rem;
@@ -14,6 +14,7 @@
     height: auto;
     display: block;
     padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 
 .cards-text {
@@ -28,6 +29,20 @@ button {
     border: 0;
     padding: 0.4rem;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: #a7b998d5;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Aboreto';
+}
+
+.cards-text h3 {
+    font-size: 1.2rem;
+    font-family: 'Aboreto', cursive;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: left;
 }
 
 .price-and-button {
