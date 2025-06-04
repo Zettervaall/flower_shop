@@ -3,7 +3,7 @@ import './CartPage.css';
 import Footer from '../components/Footer';
 
 const CartPage = () => {
-    const [product, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
     const [amount, setAmount] = useState(0);
 
     const [checkoutInfo, setCheckoutInfo] = useState({
@@ -13,23 +13,19 @@ const CartPage = () => {
         paymentMethod: 'credit_card'
     });
 
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
     useEffect(() => {
-        let productArray = [];
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
         Promise.all(
             cartItems.map((productId) =>
-                fetch(`http://localhost:3000/products/${productId}`)
-                    .then((res) => res.json())
-                    .then((data) => {
-                        productArray.push(data);
-                    })
+                fetch(`http://localhost:3000/products/${productId}`).then(
+                    (res) => res.json()
+                )
             )
-        ).then(() => {
-            setProduct(productArray);
-            const totalAmount = productArray.reduce(
-                (amount, item) => amount + Number(item.price),
+        ).then((fetchedProducts) => {
+            setProducts(fetchedProducts);
+            const totalAmount = fetchedProducts.reduce(
+                (sum, item) => sum + Number(item.price),
                 0
             );
             setAmount(totalAmount);
@@ -100,11 +96,14 @@ const CartPage = () => {
 
                 <div className="cart-summary">
                     <h2>Your Products</h2>
-                    {product.length === 0 ? (
+                    {products.length === 0 ? (
                         <p>Your cart is empty.</p>
                     ) : (
-                        product.map((product) => (
-                            <div key={product.id} className="cart-item">
+                        products.map((product, index) => (
+                            <div
+                                key={`${product.id}-${index}`}
+                                className="cart-item"
+                            >
                                 <div className="item-info">
                                     <img
                                         src={product.image_url}

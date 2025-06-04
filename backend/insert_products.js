@@ -47,7 +47,6 @@ const products = [
     ['Mini Orchid', './assets/bukett2.jpg', 199.0, 'purple', 'medium', 4],
     ['Mini Plant Trio', './assets/kruka4.jpg', 189, 'green', 'low', 4],
 
-    // Plants (category_id = 5)
     ['Double Stem Orchid', './assets/bukett1.jpg', 269.0, 'white', 'medium', 4],
     ['Orchid Basket', './assets/bukett5.jpg', 299.0, 'mixed', 'medium', 4],
     ['Golden Orchid', './assets/kruka2.jpg', 289.0, 'gold', 'medium', 4],
